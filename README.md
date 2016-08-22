@@ -1,2 +1,2 @@
-# dez-web-admin
-Simple Admin Panel based on dez-mvc-app
+# DezWebAdmin
+Simple Admin Panel based on [**dez-mvc-app**](https://github.com/dez-php/dez-mvc-app)
