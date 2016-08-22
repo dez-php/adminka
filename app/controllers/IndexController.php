@@ -8,6 +8,7 @@ class IndexController extends ControllerWeb {
 
     public function indexAction()
     {
+        $_GET['asdasd'];
         $this->view->set('file', __FILE__);
     }
 

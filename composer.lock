@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fd4815d959610b2713c5b68f628e74c3",
+    "hash": "a6cee10cfd70b6501d8107a21caeb4bf",
     "content-hash": "d5138c5cab7dfb75a26762cb0844906d",
     "packages": [
         {
             "name": "dez-php/dez-authorizer",
-            "version": "v2.0.1",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dez-php/dez-authorizer.git",
-                "reference": "05d217941ee2502e42b7f8d51a5217d3e7c56d3e"
+                "reference": "379d26528270f6bd147162b11db2f910e6e8a125"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dez-php/dez-authorizer/zipball/05d217941ee2502e42b7f8d51a5217d3e7c56d3e",
-                "reference": "05d217941ee2502e42b7f8d51a5217d3e7c56d3e",
+                "url": "https://api.github.com/repos/dez-php/dez-authorizer/zipball/379d26528270f6bd147162b11db2f910e6e8a125",
+                "reference": "379d26528270f6bd147162b11db2f910e6e8a125",
                 "shasum": ""
             },
             "require": {
@@ -51,7 +51,7 @@
                 "dez-php authorizer",
                 "php auth"
             ],
-            "time": "2016-04-22 10:25:31"
+            "time": "2016-08-22 18:39:11"
         },
         {
             "name": "dez-php/dez-collection",

@@ -1,6 +1,7 @@
 <?php
 /**
- * @var array $data
+ * @var string $message
+ * @var string $location
  * @var \Dez\Http\Response $response
 */
 ?>
@@ -11,13 +12,17 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>DezWebAdmin \ Error</title>
+    <title>Error Page <?= $this->response->getStatusCode() ?></title>
+    <link rel="stylesheet" href="<?= $this->url->staticPath('css/error-page.css'); ?>">
 </head>
-<body>
-    <h2>Error Page <b><?= $response->getStatusCode() ?></b></h2>
-    <div>
-        <h3><code><?= $data['location'] ?></code></h3>
-        <code><?= nl2br($data['response']['message']) ?></code>
+<body class="container">
+    <div class="center-block">
+        <h1>Error Page <b><?= $this->response->getStatusCode(); ?></b></h1>
+
+        <div>
+            <pre><?= $message ?></pre>
+            <h5><i>HIDDEN</i>/<?= basename($location) ?></h5>
+        </div>
     </div>
 </body>
 </html>

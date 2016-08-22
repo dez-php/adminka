@@ -20,9 +20,9 @@ return [
         'dev-config' => __DIR__ . '/dev.config.php',
     ],
     'db' => [
-        'connection_name' => 'development',
+        'connection_name' => 'production',
         'connection' => [
-            'development' => [
+            'production' => [
                 'dsn' => 'mysql:host=localhost;dbname=my-test',
                 'user' => 'root',
                 'password' => '',

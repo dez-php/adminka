@@ -3,6 +3,9 @@
 namespace Adminka;
 
 use Dez\Authorizer\Adapter\Session;
+use Dez\Authorizer\Models\Auth\SessionModel;
+use Dez\Authorizer\Models\Auth\TokenModel;
+use Dez\Authorizer\Models\CredentialModel;
 use Dez\Config\Config;
 use Dez\Http\Response;
 use Dez\Mvc\Application;
@@ -46,8 +49,13 @@ class AdminApplication extends Configurable {
     public function injection()
     {
         $this->getDi()->set('authorizer', function () {
+            CredentialModel::setTableName('admin_credentials');
+            SessionModel::setTableName('admin_sessions');
+            TokenModel::setTableName('admin_tokens');
+
             $authorizerSession = new Session();
             $authorizerSession->setDi($this->getDi());
+
             return $authorizerSession->initialize();
         });
 
@@ -77,35 +85,23 @@ class AdminApplication extends Configurable {
         set_exception_handler(function (\Exception $exception) {
             if ($this->config->path('application.debug.exceptions') == 1) {
                 $message = get_class($exception) . ": {$exception->getMessage()}";
-                $this->createSystemErrorResponse($message, 'uncaught_exception', $exception->getFile(),
-                    $exception->getLine());
+                $this->createErrorResponse($message, $exception->getFile(), $exception->getLine());
             } else {
-                $this->createSystemErrorResponse('Debug mode disabled. Message hidden', 'uncaught_exception', 'null', 0);
+                $this->createErrorResponse('Debug mode disabled. Message hidden', 'null', 0);
             }
         });
 
         register_shutdown_function(function () {
             $lastPhpError = error_get_last();
-            if (null !== $lastPhpError && $lastPhpError['type'] === E_ERROR) {
+            if (null !== $lastPhpError) {
+                $this->response->setStatusCode(403);
                 if ($this->config->path('application.debug.php_errors') == 1) {
-                    $this->createSystemErrorResponse($this->formatPhpError($lastPhpError), 'php_fatal_error',
+                    $this->createErrorResponse($this->formatPhpError($lastPhpError),
                         $lastPhpError['file'], $lastPhpError['line']);
                 } else {
-                    $this->createSystemErrorResponse("Debug mode disabled. Message hidden",
-                        $this->friendlyErrorType($lastPhpError['type']), 'null', 0);
+                    $this->createErrorResponse("Debug mode disabled. Message hidden", 'null', 0);
                 }
             }
-        });
-
-        $this->event->addListener(MvcEvent::ON_AFTER_APP_RUN, function () {
-            $lastPhpError = error_get_last();
-            if (null !== $lastPhpError) {
-                throw new MvcException($this->formatPhpError($lastPhpError));
-            }
-        });
-
-        $this->setErrorHandler(function (Application $application) {
-            $this->view->set('application', $application);
         });
 
         return $this;
@@ -113,38 +109,26 @@ class AdminApplication extends Configurable {
 
     /**
      * @param $message
-     * @param $type
      * @param $file
      * @param $line
      *
      * @return Response
      * @throws \Dez\Http\Exception
      */
-    private function createSystemErrorResponse($message, $type, $file, $line)
+    private function createErrorResponse($message, $file = null, $line = null)
     {
-
-        $responseData = [
-            'status' => 'error',
-            'error_type' => $type,
-            'response' => [
-                'message' => $message
-            ],
-            'location' => "{$file}:{$line}"
-        ];
-
+        $this->view->setRendered(false);
         $this->view->setMainLayout('error');
-        $this->view->set('data', $responseData);
 
-        $response = new Response(null);
+        $this->view->set('message', $message);
+        $this->view->set('location', "$file:$line");
 
-        $this->view->set('response', $response);
-
-        return $response
-            ->setStatusCode(503)
+        $this->response
             ->setContent($this->view->render())
-            ->setDi($this->getDi())
             ->setBodyFormat(Response::RESPONSE_HTML)
             ->send();
+
+        return $this->response;
     }
 
     /**
