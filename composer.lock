@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a6cee10cfd70b6501d8107a21caeb4bf",
-    "content-hash": "d5138c5cab7dfb75a26762cb0844906d",
+    "hash": "15a3af9af78cdb20456cece0a5ca8735",
+    "content-hash": "e6c5192ca79013798dda293607ee5971",
     "packages": [
         {
             "name": "dez-php/dez-authorizer",
@@ -479,16 +479,16 @@
         },
         {
             "name": "dez-php/dez-mvc-app",
-            "version": "v1.7.4",
+            "version": "v2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dez-php/dez-mvc-app.git",
-                "reference": "1a7076ed2fcbed2da13a112710d0150e26a4d119"
+                "reference": "ba2cea658e5b03cd0bd739466cc1c4592994bd89"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dez-php/dez-mvc-app/zipball/1a7076ed2fcbed2da13a112710d0150e26a4d119",
-                "reference": "1a7076ed2fcbed2da13a112710d0150e26a4d119",
+                "url": "https://api.github.com/repos/dez-php/dez-mvc-app/zipball/ba2cea658e5b03cd0bd739466cc1c4592994bd89",
+                "reference": "ba2cea658e5b03cd0bd739466cc1c4592994bd89",
                 "shasum": ""
             },
             "require": {
@@ -529,7 +529,7 @@
                 "mvc app",
                 "php mvc"
             ],
-            "time": "2016-05-27 08:54:39"
+            "time": "2016-08-23 10:42:54"
         },
         {
             "name": "dez-php/dez-orm",
