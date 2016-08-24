@@ -1,0 +1,34 @@
+.menu {
+  padding: 40px;
+  color: #fff;
+  background: #963c3d;
+
+  h2 {
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 14px;
+    color: rgba(255, 255, 255, .6);
+  }
+
+  ul {
+    list-style: none;
+    margin: 5px 0 40px 0;
+
+    li {
+
+      a {
+        display: block;
+        padding: 5px 0;
+        font-size: 16px;
+        cursor: pointer;
+
+        &.active {
+          margin: 0 -40px;
+          padding: 5px 40px;
+          background: #713031;
+        }
+      }
+    }
+  }
+}

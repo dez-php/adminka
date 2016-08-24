@@ -67,13 +67,8 @@ class AdminApplication extends Configurable {
      */
     private function configurationRoutes()
     {
-        /*
-        $this->router
-            ->add('/:hash', [
-                'controller' => 'file',
-                'action' => 'index',
-            ])->regex('hash', '[a-f0-9]{32}');
-        */
+        $this->router->add('/:action.html', ['controller' => 'index',]);
+
         return $this;
     }
 
@@ -117,6 +112,8 @@ class AdminApplication extends Configurable {
      */
     private function createErrorResponse($message, $file = null, $line = null)
     {
+        ob_clean();
+
         $this->view->setRendered(false);
         $this->view->setMainLayout('error');
 
@@ -127,8 +124,7 @@ class AdminApplication extends Configurable {
             ->setContent($this->view->render())
             ->setBodyFormat(Response::RESPONSE_HTML)
             ->send();
-
-        return $this->response;
+        die();
     }
 
     /**
@@ -138,10 +134,7 @@ class AdminApplication extends Configurable {
     private function formatPhpError(array $lastPhpError = [])
     {
         $phpVersion = PHP_VERSION;
-        $exceptionMessage = "PHP {$phpVersion}\n{$this->friendlyErrorType($lastPhpError['type'])} [{$lastPhpError['message']}]";
-        $exceptionMessage = $exceptionMessage . PHP_EOL . "{$lastPhpError['file']}:{$lastPhpError['line']}";
-
-        return $exceptionMessage;
+        return "PHP {$phpVersion}\n{$this->friendlyErrorType($lastPhpError['type'])} [{$lastPhpError['message']}]";
     }
 
     /**

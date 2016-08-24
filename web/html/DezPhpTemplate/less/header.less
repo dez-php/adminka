@@ -1,0 +1,51 @@
+.header {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+
+  background: #19242F;
+  color: #fff;
+
+  &-logo {
+    flex: 0 0 250px;
+    align-self: stretch;
+    justify-content: space-between;
+    text-align: center;
+
+    background: #212F3E;
+    padding: 0 40px;
+    line-height: 40px;
+
+    a {
+      font-size: 14px;
+      line-height: 14px;
+      color: #fff;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+
+  &-menu {
+    display: flex;
+    flex-flow: row nowrap;
+    max-width: 800px;
+    margin-left: 40px;
+
+    flex: 1;
+
+    a {
+      flex: 1;
+
+      font-size: 12px;
+      text-transform: uppercase;
+      color: #fff;
+      opacity: .7;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
