@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/main.min.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 
@@ -14,7 +14,7 @@
         <a href="/">adminka</a>
     </section>
     <nav class="header-menu">
-        <a href="#">Header item 1</a>
+        <a class="text-color-orange" href="#">Header item 23</a>
         <a href="#">Header item 2</a>
         <a href="#">Header item 3</a>
         <a href="#">Header item 4</a>
@@ -36,13 +36,15 @@
             </li>
         </ul>
 
-        <h2>Menu header 2</h2>
+        <h2>
+            <a href="" class="text-color-dark">asdasdasd</a>
+        </h2>
         <ul>
             <li>
                 <a class="active">Item 1</a>
             </li>
             <li>
-                <a>Item 2</a>
+                <a class="text-color-yellow">Item 2</a>
             </li>
             <li>
                 <a>Item 3</a>
@@ -50,7 +52,7 @@
         </ul>
     </menu>
     <article class="body">
-        <h1>Header 1</h1>
+        <h1 class="hover-text-color-greeny">Header 1</h1>
 
         <p>
         Lorem <a href="#">ipsum</a> dolor sit amet, consectetur adipiscing elit. Cras viverra quam orci. Nam aliquam risus et venenatis volutpat. Integer et egestas odio. Suspendisse ut euismod eros. Sed id mattis odio, et elementum lacus. Vivamus sodales massa vel mauris facilisis, at blandit ligula mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis facilisis ipsum, eget porta turpis semper quis. Aenean blandit molestie euismod. Integer aliquam, mauris in sollicitudin blandit, quam urna tincidunt neque, a cursus nisi eros eget enim. Donec vitae lobortis enim. Nulla facilisi. Vivamus eu odio quis mi fermentum interdum.
@@ -59,22 +61,28 @@
         <pre><code>// Create new Plates instance
 $templates = new League\Plates\Engine('/path/to/templates');</code></pre>
 
-        <h2>Header 2</h2>
+        <h2>
+            <a class="bg-color-yellow text-color-dark" href="#">Header 2</a>
+        </h2>
 
-        <p>
+        <p style="border-style: solid; border-spacing: 1px" class="border-color-orangered">
         Morbi at porta orci, <code>feugiat</code> tincidunt lectus. Aliquam feugiat ligula sit amet elit vulputate porta. Integer a neque a dui hendrerit pulvinar nec sed orci. Ut tristique sagittis quam, vulputate condimentum diam. Praesent sit amet mauris facilisis, interdum nunc vel, imperdiet turpis. Integer nec ornare lorem. Nam in justo a ipsum volutpat fermentum quis lacinia leo. Suspendisse et sapien tempor, tempus risus ac, egestas urna. In tristique mauris erat, in molestie nunc porta ac. Pellentesque ac ultricies ligula. Aenean auctor justo mi, id facilisis purus tristique quis. Suspendisse ultrices, lectus eget mollis fringilla, ligula orci facilisis ligula, et placerat sapien lectus id est. Aliquam gravida accumsan ante non aliquet. Vivamus interdum dolor eu elementum scelerisque.
         </p>
 
         <hr>
 
+        <h1>
+            <a href="" class="text-color-gray">Test Test asdasd</a>
+        </h1>
+
         <h3>Header 3</h3>
 
-        <ul>
+        <ul class="bg-color-blue">
             <li>List 1</li>
             <li>List 2</li>
             <li>List 3
                 <ul>
-                    <li>Sub list 1</li>
+                    <li class="text-inverse">Sub list 1</li>
                     <li>Sub list 2</li>
                     <li>Sub list 3</li>
                 </ul>
