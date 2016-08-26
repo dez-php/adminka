@@ -1,0 +1,80 @@
+@black: #000;
+@grayDarker: lighten(@black, 10%);
+@grayDark: lighten(@black, 25%);
+@gray: lighten(@black, 40%);
+@grayLight: lighten(@black, 55%);
+@grayLighter: lighten(@black, 95%);
+
+@colorList: dark #3b3a35,
+gray #6c6e70,
+black @black,
+gray-darker @grayDarker,
+gray-dark @grayDark,
+gray-light @grayLight,
+gray-lighter @grayLighter,
+orange #eb7260,
+yellow #e9e0d6,
+yellow-gray #d7d1ca,
+crimson crimson,
+greeny #a3d39c,
+green-blue #66c3bc,
+blue #28abe3,
+green #1fda9a,
+red #cd1719,
+orangered orangered,
+orange-pink #f15d58,
+gray-pink #963c3d;
+
+@hoverFactor: 5%;
+@activeFactor: 5%;
+@focusFactor: 10%;
+
+.colorGenerator(@index) when (@index > 0) {
+  @color: extract(@colorList, @index);
+  @name: extract(@color, 1);
+  @value: extract(@color, 2);
+
+  .text-color-@{name} {
+    color: @value;
+    a&:hover {
+      color: lighten(@value, @hoverFactor);
+    }
+    a&:focus {
+      color: darken(@value, @focusFactor);
+    }
+    a&:active {
+      color: darken(@value, @activeFactor);
+    }
+  }
+
+  *:hover.hover-text-color-@{name} {
+    color: @value;
+  }
+
+  .bg-color-@{name} {
+    background-color: @value;
+    & .text-inverse {
+      color: spin(@value, 180);
+    }
+    a&:hover {
+      background-color: lighten(@value, @hoverFactor);
+    }
+    a&:focus {
+      background-color: darken(@value, @focusFactor);
+    }
+    a&:active {
+      background-color: darken(@value, @activeFactor);
+    }
+  }
+
+  .border-color-@{name} {
+    border-color: @value;
+    &:focus {
+      border-color: darken(@value, @focusFactor);
+    }
+  }
+
+  .colorGenerator(@index - 1);
+}
+
+.colorGenerator(length(@colorList));
