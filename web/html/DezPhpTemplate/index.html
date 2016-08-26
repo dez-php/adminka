@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dez-PHP Template</title>
+    <title>Adminka</title>
     <meta charset="UTF-8">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
@@ -56,8 +56,12 @@
         Lorem <a href="#">ipsum</a> dolor sit amet, consectetur adipiscing elit. Cras viverra quam orci. Nam aliquam risus et venenatis volutpat. Integer et egestas odio. Suspendisse ut euismod eros. Sed id mattis odio, et elementum lacus. Vivamus sodales massa vel mauris facilisis, at blandit ligula mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis facilisis ipsum, eget porta turpis semper quis. Aenean blandit molestie euismod. Integer aliquam, mauris in sollicitudin blandit, quam urna tincidunt neque, a cursus nisi eros eget enim. Donec vitae lobortis enim. Nulla facilisi. Vivamus eu odio quis mi fermentum interdum.
         </p>
 
-        <pre><code>// Create new Plates instance
-$templates = new League\Plates\Engine('/path/to/templates');</code></pre>
+        <pre><code>private function configurationRoutes()
+{
+    $this->router->add('/:action.html', ['controller' => 'index',]);
+
+    return $this;
+}</code></pre>
 
         <h2>Header 2</h2>
 
