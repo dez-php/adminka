@@ -12,7 +12,7 @@ body {
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
-  background: @colorPlatinum;
+  background: @colorLitherGray;
   color: #333;
   p {
     line-height: 16px;
@@ -21,7 +21,7 @@ body {
 }
 
 .header {
-  flex: 0 0 40px ;
+  flex: 0 0 40px;
 }
 
 main {
@@ -36,9 +36,44 @@ main {
 
   .body {
     flex: 1;
-    margin: 40px;
-    max-width: 800px;
+    margin: 20px;
     line-height: 16px;
+  }
+
+}
+
+.container {
+  margin-bottom: 20px;
+  & .caption {
+    background-color: @colorWhite;
+    padding: 20px;
+    border-top: 1px solid @boxColorBorder;
+    border-left: 1px solid @boxColorBorder;
+    border-right: 1px solid @boxColorBorder;
+    border-bottom: 1px solid darken(@colorWhite, 5%);
+
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+  }
+
+  & .box {
+    padding: 20px;
+    background-color: @colorWhite;
+    border-left: 1px solid @boxColorBorder;
+    border-right: 1px solid @boxColorBorder;
+  }
+
+  & .footer-panel {
+    background-color: @colorWhite;
+    padding: 20px;
+
+    border-bottom: 1px solid @boxColorBorder;
+    border-left: 1px solid @boxColorBorder;
+    border-right: 1px solid @boxColorBorder;
+    border-top: 1px solid darken(@colorWhite, 5%);
+
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
   }
 
 }

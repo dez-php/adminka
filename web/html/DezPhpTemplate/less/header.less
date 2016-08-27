@@ -12,7 +12,7 @@
     justify-content: space-between;
     text-align: center;
 
-    background: desaturate(darken(@colorCrimson, 15%), 25%);
+    background: desaturate(darken(@colorCrimson, 15%), 15%);
     padding: 0 40px;
     line-height: 40px;
 
@@ -30,21 +30,23 @@
   &-menu {
     display: flex;
     flex-flow: row nowrap;
-    max-width: 800px;
-    margin-left: 40px;
+    width: auto;
 
     flex: 1;
 
     a {
       flex: 1;
-
+      display: block;
       font-size: 12px;
       text-transform: uppercase;
       color: #fff;
       opacity: .7;
+      padding: 12px 20px;
+      text-align: center;
 
       &:hover {
         opacity: 1;
+        background-color: lighten(@colorDarkGray, 5%);
       }
     }
   }
