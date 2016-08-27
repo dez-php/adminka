@@ -3,5 +3,9 @@ vendor
 .idea/
 *.log
 .DS_Store
+<<<<<<< HEAD
 app/config/dev.config.php
 node_modules
+=======
+app/config/dev.config.php
+>>>>>>> b4d9fcfe37c14ed64e8ed5cc872911a4030b9ce3
