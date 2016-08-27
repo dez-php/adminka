@@ -1,0 +1,57 @@
+@import "variables";
+@import "reset";
+@import "mixins";
+@import "header";
+@import "menu";
+@import "forms";
+
+body {
+  display: flex;
+  flex-flow: column nowrap;
+  font-family: 'Exo 2', 'Open Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  background: @colorPlatinum;
+  color: #333;
+  p {
+    line-height: 16px;
+  }
+
+}
+
+.header {
+  flex: 0 0 40px ;
+}
+
+main {
+  display: flex;
+  flex-flow: row nowrap;
+
+  flex: 1;
+
+  .menu {
+    flex: 0 0 200px;
+  }
+
+  .body {
+    flex: 1;
+    margin: 40px;
+    max-width: 800px;
+    line-height: 16px;
+  }
+
+}
+
+.footer {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+
+  flex: 0 0 50px;
+
+  padding: 0 40px;
+  background: #19242F;
+  color: rgba(255, 255, 255, .6);
+  font-size: 13px;
+}

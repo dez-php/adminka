@@ -1,0 +1,15 @@
+.linkHover (@color) {
+  color: darken(@color, 10%);
+}
+
+.linkActive (@color) {
+  color: darken(@color, 15%);
+}
+
+.indent (@color) {
+  background-color: @color;
+  border-top: 1px solid darken(@color, 20%);
+  border-bottom: 1px solid lighten(@color, 0%);
+  box-shadow: inset 0px 1px 3px fade(darken(@color, 30%), 50%);
+  display: block;
+}
