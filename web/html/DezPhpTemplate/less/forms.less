@@ -2,10 +2,18 @@ form {
   border: 1px solid red;
 }
 
-input[type=button], input[type=submit] {
+input[type=button], input[type=submit], button {
+
   border: 1px solid #289D9D;
-  background-color: #289D9D;
   padding: 10px 20px;
   color: #fff;
   text-shadow: 1px 1px 1px #000;
+  cursor: pointer;
+
+  .gradient(@colorInfraRed, darken(@colorInfraRed, 15%));
+
+  &:hover{
+    .gradient(darken(@colorInfraRed, 15%), @colorInfraRed);
+  }
+
 }

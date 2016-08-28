@@ -160,7 +160,7 @@ article blockquote {
       -ms-flex-pack: justify;
           justify-content: space-between;
   text-align: center;
-  background: #af1941;
+  background: #b90f3c;
   padding: 0 40px;
   line-height: 40px;
 }
@@ -180,8 +180,7 @@ article blockquote {
   -webkit-flex-flow: row nowrap;
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
-  max-width: 800px;
-  margin-left: 40px;
+  width: auto;
   -webkit-box-flex: 1;
   -webkit-flex: 1;
       -ms-flex: 1;
@@ -192,17 +191,21 @@ article blockquote {
   -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  display: block;
   font-size: 12px;
   text-transform: uppercase;
   color: #fff;
   opacity: .7;
+  padding: 12px 20px;
+  text-align: center;
 }
 .header-menu a:hover {
   opacity: 1;
+  background-color: #385360;
 }
 .menu {
-  padding: 40px;
-  color: #fff;
+  padding: 30px 15px;
+  color: #FFFFFF;
   background: #586F7C;
 }
 .menu h2 {
@@ -210,38 +213,56 @@ article blockquote {
   font-weight: 400;
   text-transform: uppercase;
   line-height: 14px;
-  color: #C0CCD3;
+  color: #FFFFFF;
+}
+.menu h2 a {
+  color: #FFFFFF;
 }
 .menu ul {
   list-style: none;
   margin: 5px 0 40px 0;
 }
 .menu ul li a {
+  color: #f2f2f2;
   display: block;
-  padding: 5px 0;
-  font-size: 16px;
+  font-size: 12px;
   cursor: pointer;
+  margin: 0 -15px;
+  padding: 5px 40px;
 }
 .menu ul li a.active {
-  margin: 0 -40px;
-  padding: 5px 40px;
   background-color: #8497A3;
   border-top: 1px solid #53646e;
   border-bottom: 1px solid #8497a3;
-  -webkit-box-shadow: inset 0px 1px 3px rgba(61, 73, 81, 0.5);
-          box-shadow: inset 0px 1px 3px rgba(61, 73, 81, 0.5);
+  -webkit-box-shadow: inset 0 1px 3px rgba(61, 73, 81, 0.5);
+          box-shadow: inset 0 1px 3px rgba(61, 73, 81, 0.5);
   display: block;
+}
+.menu ul li a:hover {
+  color: #FFFFFF;
+  background-color: #637c8b;
 }
 form {
   border: 1px solid red;
 }
 input[type=button],
-input[type=submit] {
+input[type=submit],
+button {
   border: 1px solid #289D9D;
-  background-color: #289D9D;
   padding: 10px 20px;
   color: #fff;
   text-shadow: 1px 1px 1px #000;
+  cursor: pointer;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#EF476F), to(#d71341));
+  background-image: -webkit-linear-gradient(top, #EF476F, #d71341);
+  background-image: linear-gradient(to bottom, #EF476F, #d71341);
+}
+input[type=button]:hover,
+input[type=submit]:hover,
+button:hover {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#d71341), to(#EF476F));
+  background-image: -webkit-linear-gradient(top, #d71341, #EF476F);
+  background-image: linear-gradient(to bottom, #d71341, #EF476F);
 }
 body {
   display: -webkit-box;
@@ -255,7 +276,7 @@ body {
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
-  background: #EEE4E1;
+  background: #C0CCD3;
   color: #333;
 }
 body p {
@@ -263,9 +284,9 @@ body p {
 }
 .header {
   -webkit-box-flex: 0;
-  -webkit-flex: 0 0 40px ;
-      -ms-flex: 0 0 40px ;
-          flex: 0 0 40px ;
+  -webkit-flex: 0 0 40px;
+      -ms-flex: 0 0 40px;
+          flex: 0 0 40px;
 }
 main {
   display: -webkit-box;
@@ -291,9 +312,31 @@ main .body {
   -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  margin: 40px;
-  max-width: 800px;
+  margin: 20px;
   line-height: 16px;
+}
+.container {
+  margin-bottom: 20px;
+  background-color: #FFFFFF;
+  border: 1px solid #a2b4be;
+  -webkit-border-radius: 4px;
+          border-radius: 4px;
+}
+.container .caption {
+  border-bottom: 1px solid #f2f2f2;
+  padding: 20px;
+}
+.container .box {
+  padding: 20px;
+}
+.container .footer-panel {
+  border-top: 1px solid #f2f2f2;
+  padding: 20px;
+  background-color: #fafafa;
+  -webkit-border-bottom-left-radius: 4px;
+          border-bottom-left-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+          border-bottom-right-radius: 4px;
 }
 .footer {
   display: -webkit-box;

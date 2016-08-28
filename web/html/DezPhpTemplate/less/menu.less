@@ -1,6 +1,6 @@
 .menu {
-  padding: 40px;
-  color: #fff;
+  padding: 30px 15px;
+  color: @colorWhite;
   background: @colorGray;
 
   h2 {
@@ -8,7 +8,12 @@
     font-weight: 400;
     text-transform: uppercase;
     line-height: 14px;
-    color: @colorLitherGray;
+    color: @colorWhite;
+
+    & a{
+      color: @colorWhite;
+    }
+
   }
 
   ul {
@@ -18,16 +23,22 @@
     li {
 
       a {
+        color: darken(@colorWhite, 5%);
         display: block;
-        padding: 5px 0;
-        font-size: 16px;
+        font-size: 12px;
         cursor: pointer;
+        margin: 0 -15px;
+        padding: 5px 40px;
 
         &.active {
-          margin: 0 -40px;
-          padding: 5px 40px;
           .indent(@colorLightGray);
         }
+
+        &:hover {
+          color: @colorWhite;
+          background-color: lighten(@colorGray, 5%);
+        }
+
       }
     }
   }
