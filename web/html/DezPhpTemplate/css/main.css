@@ -424,18 +424,18 @@ button.gray:active {
 input[type=button].dark,
 input[type=submit].dark,
 button.dark {
-  -webkit-box-shadow: inset 0px -5px 0 #001e06;
-          box-shadow: inset 0px -5px 0 #001e06;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#005210), to(#00470e));
-  background-image: -webkit-linear-gradient(top, #005210, #00470e);
-  background-image: linear-gradient(to bottom, #005210, #00470e);
+  -webkit-box-shadow: inset 0px -5px 0 #4b4b4b;
+          box-shadow: inset 0px -5px 0 #4b4b4b;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#646464), to(#5f5f5f));
+  background-image: -webkit-linear-gradient(top, #646464, #5f5f5f);
+  background-image: linear-gradient(to bottom, #646464, #5f5f5f);
 }
 input[type=button].dark:hover,
 input[type=submit].dark:hover,
 button.dark:hover {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#00470e), to(#005210));
-  background-image: -webkit-linear-gradient(top, #00470e, #005210);
-  background-image: linear-gradient(to bottom, #00470e, #005210);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#5f5f5f), to(#646464));
+  background-image: -webkit-linear-gradient(top, #5f5f5f, #646464);
+  background-image: linear-gradient(to bottom, #5f5f5f, #646464);
 }
 input[type=button].dark:active,
 input[type=submit].dark:active,
