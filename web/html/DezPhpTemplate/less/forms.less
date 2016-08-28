@@ -1,19 +1,36 @@
-form {
-  border: 1px solid red;
+form  {
+  & input, select, textarea, button {
+    margin-right: 10px;
+  }
+}
+
+input, select, textarea, button {
+  outline: none;
+}
+
+textarea {
+  resize: none;
+}
+
+input:not([type=submit]):not([type=file]):not([type=button]),
+select, textarea {
+  padding: 10px;
+  font-size: 12px;
+  border: 1px solid darken(@colorWhite, 10%);
+  border-radius: 4px;
+  color: @colorNiceBlack;
+  .gradient(darken(@colorWhite, 2%), @colorWhite);
+  &:focus {
+    border-color: darken(@colorWhite, 15%);
+  }
 }
 
 input[type=button], input[type=submit], button {
-
-  border: 1px solid #289D9D;
+  border: none;
   padding: 10px 20px;
   color: #fff;
-  text-shadow: 1px 1px 1px #000;
   cursor: pointer;
-
-  .gradient(@colorInfraRed, darken(@colorInfraRed, 15%));
-
-  &:hover{
-    .gradient(darken(@colorInfraRed, 15%), @colorInfraRed);
-  }
-
+  border-radius: 4px;
+  padding-bottom: 12px;
 }
+

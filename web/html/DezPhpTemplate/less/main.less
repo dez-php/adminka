@@ -4,11 +4,15 @@
 @import "header";
 @import "menu";
 @import "forms";
+@import "buttons/3d-buttons";
+
+* {
+  font-family: 'Exo 2', 'Open Sans', sans-serif;
+}
 
 body {
   display: flex;
   flex-flow: column nowrap;
-  font-family: 'Exo 2', 'Open Sans', sans-serif;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
@@ -17,7 +21,6 @@ body {
   p {
     line-height: 16px;
   }
-
 }
 
 .header {
@@ -45,7 +48,7 @@ main {
 .container {
   margin-bottom: 20px;
   background-color: @colorWhite;
-  border: 1px solid darken(@colorLitherGray, 10%);
+  border: 1px solid darken(@boxColorBorder, 10%);
   border-radius: 4px;
 
   & .caption {

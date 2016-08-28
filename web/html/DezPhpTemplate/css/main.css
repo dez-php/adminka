@@ -242,27 +242,265 @@ article blockquote {
   color: #FFFFFF;
   background-color: #637c8b;
 }
-form {
-  border: 1px solid red;
+form input,
+form select,
+form textarea,
+form button {
+  margin-right: 10px;
+}
+input,
+select,
+textarea,
+button {
+  outline: none;
+}
+textarea {
+  resize: none;
+}
+input:not([type=submit]):not([type=file]):not([type=button]),
+select,
+textarea {
+  padding: 10px;
+  font-size: 12px;
+  border: 1px solid #e6e6e6;
+  -webkit-border-radius: 4px;
+          border-radius: 4px;
+  color: #000501;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fafafa), to(#FFFFFF));
+  background-image: -webkit-linear-gradient(top, #fafafa, #FFFFFF);
+  background-image: linear-gradient(to bottom, #fafafa, #FFFFFF);
+}
+input:not([type=submit]):not([type=file]):not([type=button]):focus,
+select:focus,
+textarea:focus {
+  border-color: #d9d9d9;
 }
 input[type=button],
 input[type=submit],
 button {
-  border: 1px solid #289D9D;
+  border: none;
   padding: 10px 20px;
   color: #fff;
-  text-shadow: 1px 1px 1px #000;
   cursor: pointer;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#EF476F), to(#d71341));
-  background-image: -webkit-linear-gradient(top, #EF476F, #d71341);
-  background-image: linear-gradient(to bottom, #EF476F, #d71341);
+  -webkit-border-radius: 4px;
+          border-radius: 4px;
+  padding-bottom: 12px;
 }
-input[type=button]:hover,
-input[type=submit]:hover,
-button:hover {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#d71341), to(#EF476F));
-  background-image: -webkit-linear-gradient(top, #d71341, #EF476F);
-  background-image: linear-gradient(to bottom, #d71341, #EF476F);
+input[type=button],
+input[type=submit],
+button {
+  text-shadow: 1px 1px 1px #000;
+}
+input[type=button].success,
+input[type=submit].success,
+button.success {
+  -webkit-box-shadow: inset 0px -5px 0 #01535e;
+          box-shadow: inset 0px -5px 0 #01535e;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#028090), to(#027786));
+  background-image: -webkit-linear-gradient(top, #028090, #027786);
+  background-image: linear-gradient(to bottom, #028090, #027786);
+}
+input[type=button].success:hover,
+input[type=submit].success:hover,
+button.success:hover {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#027786), to(#028090));
+  background-image: -webkit-linear-gradient(top, #027786, #028090);
+  background-image: linear-gradient(to bottom, #027786, #028090);
+}
+input[type=button].success:active,
+input[type=submit].success:active,
+button.success:active {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: translate(0px, 2px);
+      -ms-transform: translate(0px, 2px);
+          transform: translate(0px, 2px);
+  padding-bottom: 10px;
+}
+input[type=button].notice,
+input[type=submit].notice,
+button.notice {
+  -webkit-box-shadow: inset 0px -5px 0 #58936a;
+          box-shadow: inset 0px -5px 0 #58936a;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#73AB84), to(#6da77e));
+  background-image: -webkit-linear-gradient(top, #73AB84, #6da77e);
+  background-image: linear-gradient(to bottom, #73AB84, #6da77e);
+}
+input[type=button].notice:hover,
+input[type=submit].notice:hover,
+button.notice:hover {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#6da77e), to(#73AB84));
+  background-image: -webkit-linear-gradient(top, #6da77e, #73AB84);
+  background-image: linear-gradient(to bottom, #6da77e, #73AB84);
+}
+input[type=button].notice:active,
+input[type=submit].notice:active,
+button.notice:active {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: translate(0px, 2px);
+      -ms-transform: translate(0px, 2px);
+          transform: translate(0px, 2px);
+  padding-bottom: 10px;
+}
+input[type=button].info,
+input[type=submit].info,
+button.info {
+  -webkit-box-shadow: inset 0px -5px 0 #76c17a;
+          box-shadow: inset 0px -5px 0 #76c17a;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#99D19C), to(#92ce95));
+  background-image: -webkit-linear-gradient(top, #99D19C, #92ce95);
+  background-image: linear-gradient(to bottom, #99D19C, #92ce95);
+}
+input[type=button].info:hover,
+input[type=submit].info:hover,
+button.info:hover {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#92ce95), to(#99D19C));
+  background-image: -webkit-linear-gradient(top, #92ce95, #99D19C);
+  background-image: linear-gradient(to bottom, #92ce95, #99D19C);
+}
+input[type=button].info:active,
+input[type=submit].info:active,
+button.info:active {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: translate(0px, 2px);
+      -ms-transform: translate(0px, 2px);
+          transform: translate(0px, 2px);
+  padding-bottom: 10px;
+}
+input[type=button].cancel,
+input[type=submit].cancel,
+button.cancel {
+  -webkit-box-shadow: inset 0px -5px 0 #9e7c5e;
+          box-shadow: inset 0px -5px 0 #9e7c5e;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#B2967D), to(#ae9177));
+  background-image: -webkit-linear-gradient(top, #B2967D, #ae9177);
+  background-image: linear-gradient(to bottom, #B2967D, #ae9177);
+}
+input[type=button].cancel:hover,
+input[type=submit].cancel:hover,
+button.cancel:hover {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ae9177), to(#B2967D));
+  background-image: -webkit-linear-gradient(top, #ae9177, #B2967D);
+  background-image: linear-gradient(to bottom, #ae9177, #B2967D);
+}
+input[type=button].cancel:active,
+input[type=submit].cancel:active,
+button.cancel:active {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: translate(0px, 2px);
+      -ms-transform: translate(0px, 2px);
+          transform: translate(0px, 2px);
+  padding-bottom: 10px;
+}
+input[type=button].gray,
+input[type=submit].gray,
+button.gray {
+  -webkit-box-shadow: inset 0px -5px 0 #da9f87;
+          box-shadow: inset 0px -5px 0 #da9f87;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#E6BEAE), to(#e4b8a6));
+  background-image: -webkit-linear-gradient(top, #E6BEAE, #e4b8a6);
+  background-image: linear-gradient(to bottom, #E6BEAE, #e4b8a6);
+}
+input[type=button].gray:hover,
+input[type=submit].gray:hover,
+button.gray:hover {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#e4b8a6), to(#E6BEAE));
+  background-image: -webkit-linear-gradient(top, #e4b8a6, #E6BEAE);
+  background-image: linear-gradient(to bottom, #e4b8a6, #E6BEAE);
+}
+input[type=button].gray:active,
+input[type=submit].gray:active,
+button.gray:active {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: translate(0px, 2px);
+      -ms-transform: translate(0px, 2px);
+          transform: translate(0px, 2px);
+  padding-bottom: 10px;
+}
+input[type=button].dark,
+input[type=submit].dark,
+button.dark {
+  -webkit-box-shadow: inset 0px -5px 0 #001e06;
+          box-shadow: inset 0px -5px 0 #001e06;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#005210), to(#00470e));
+  background-image: -webkit-linear-gradient(top, #005210, #00470e);
+  background-image: linear-gradient(to bottom, #005210, #00470e);
+}
+input[type=button].dark:hover,
+input[type=submit].dark:hover,
+button.dark:hover {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#00470e), to(#005210));
+  background-image: -webkit-linear-gradient(top, #00470e, #005210);
+  background-image: linear-gradient(to bottom, #00470e, #005210);
+}
+input[type=button].dark:active,
+input[type=submit].dark:active,
+button.dark:active {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: translate(0px, 2px);
+      -ms-transform: translate(0px, 2px);
+          transform: translate(0px, 2px);
+  padding-bottom: 10px;
+}
+input[type=button].warning,
+input[type=submit].warning,
+button.warning {
+  -webkit-box-shadow: inset 0px -5px 0 #a87447;
+          box-shadow: inset 0px -5px 0 #a87447;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#c59b76), to(#c2966f));
+  background-image: -webkit-linear-gradient(top, #c59b76, #c2966f);
+  background-image: linear-gradient(to bottom, #c59b76, #c2966f);
+}
+input[type=button].warning:hover,
+input[type=submit].warning:hover,
+button.warning:hover {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#c2966f), to(#c59b76));
+  background-image: -webkit-linear-gradient(top, #c2966f, #c59b76);
+  background-image: linear-gradient(to bottom, #c2966f, #c59b76);
+}
+input[type=button].warning:active,
+input[type=submit].warning:active,
+button.warning:active {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: translate(0px, 2px);
+      -ms-transform: translate(0px, 2px);
+          transform: translate(0px, 2px);
+  padding-bottom: 10px;
+}
+input[type=button].error,
+input[type=submit].error,
+button.error {
+  -webkit-box-shadow: inset 0px -5px 0 #c20d1e;
+          box-shadow: inset 0px -5px 0 #c20d1e;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f12b3d), to(#f02235));
+  background-image: -webkit-linear-gradient(top, #f12b3d, #f02235);
+  background-image: linear-gradient(to bottom, #f12b3d, #f02235);
+}
+input[type=button].error:hover,
+input[type=submit].error:hover,
+button.error:hover {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f02235), to(#f12b3d));
+  background-image: -webkit-linear-gradient(top, #f02235, #f12b3d);
+  background-image: linear-gradient(to bottom, #f02235, #f12b3d);
+}
+input[type=button].error:active,
+input[type=submit].error:active,
+button.error:active {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: translate(0px, 2px);
+      -ms-transform: translate(0px, 2px);
+          transform: translate(0px, 2px);
+  padding-bottom: 10px;
+}
+* {
+  font-family: 'Exo 2', 'Open Sans', sans-serif;
 }
 body {
   display: -webkit-box;
@@ -272,7 +510,6 @@ body {
   -webkit-flex-flow: column nowrap;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
-  font-family: 'Exo 2', 'Open Sans', sans-serif;
   font-size: 12px;
   font-weight: 400;
   line-height: 16px;
@@ -318,7 +555,7 @@ main .body {
 .container {
   margin-bottom: 20px;
   background-color: #FFFFFF;
-  border: 1px solid #a2b4be;
+  border: 1px solid #93a3ae;
   -webkit-border-radius: 4px;
           border-radius: 4px;
 }

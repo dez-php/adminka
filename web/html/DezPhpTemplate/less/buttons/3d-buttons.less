@@ -1,0 +1,111 @@
+input[type=button],
+input[type=submit],
+button {
+
+  text-shadow: 1px 1px 1px #000;
+
+  &.success {
+    box-shadow: inset 0px -5px 0 darken(@buttonColorSuccess, 10%);
+    .gradient(@buttonColorSuccess, darken(@buttonColorSuccess, 2%));
+    &:hover{
+      .gradient(darken(@buttonColorSuccess, 2%), @buttonColorSuccess);
+    }
+    &:active {
+      box-shadow: none;
+      transform: translate(0px, 2px);
+      padding-bottom: 10px;
+    }
+  }
+
+  &.notice {
+    box-shadow: inset 0px -5px 0 darken(@buttonColorNotice, 10%);
+    .gradient(@buttonColorNotice, darken(@buttonColorNotice, 2%));
+    &:hover{
+      .gradient(darken(@buttonColorNotice, 2%), @buttonColorNotice);
+    }
+    &:active {
+      box-shadow: none;
+      transform: translate(0px, 2px);
+      padding-bottom: 10px;
+    }
+  }
+
+  &.info {
+    box-shadow: inset 0px -5px 0 darken(@buttonColorInfo, 10%);
+    .gradient(@buttonColorInfo, darken(@buttonColorInfo, 2%));
+    &:hover{
+      .gradient(darken(@buttonColorInfo, 2%), @buttonColorInfo);
+    }
+    &:active {
+      box-shadow: none;
+      transform: translate(0px, 2px);
+      padding-bottom: 10px;
+    }
+  }
+
+  &.cancel {
+    box-shadow: inset 0px -5px 0 darken(@buttonColorCancel, 10%);
+    .gradient(@buttonColorCancel, darken(@buttonColorCancel, 2%));
+    &:hover{
+      .gradient(darken(@buttonColorCancel, 2%), @buttonColorCancel);
+    }
+    &:active {
+      box-shadow: none;
+      transform: translate(0px, 2px);
+      padding-bottom: 10px;
+    }
+  }
+
+  &.gray {
+    box-shadow: inset 0px -5px 0 darken(@buttonColorGray, 10%);
+    .gradient(@buttonColorGray, darken(@buttonColorGray, 2%));
+    &:hover{
+      .gradient(darken(@buttonColorGray, 2%), @buttonColorGray);
+    }
+    &:active {
+      box-shadow: none;
+      transform: translate(0px, 2px);
+      padding-bottom: 10px;
+    }
+  }
+
+  &.dark {
+    box-shadow: inset 0px -5px 0 darken(@buttonColorDark, 10%);
+    .gradient(@buttonColorDark, darken(@buttonColorDark, 2%));
+    &:hover{
+      .gradient(darken(@buttonColorDark, 2%), @buttonColorDark);
+    }
+    &:active {
+      box-shadow: none;
+      transform: translate(0px, 2px);
+      padding-bottom: 10px;
+    }
+  }
+
+  &.warning {
+    box-shadow: inset 0px -5px 0 darken(@buttonColorWarning, 15%);
+    .gradient(@buttonColorWarning, darken(@buttonColorWarning, 2%));
+    &:hover{
+      .gradient(darken(@buttonColorWarning, 2%), @buttonColorWarning);
+    }
+    &:active {
+      box-shadow: none;
+      transform: translate(0px, 2px);
+      padding-bottom: 10px;
+    }
+  }
+
+  &.error {
+    box-shadow: inset 0px -5px 0 darken(@buttonColorError, 15%);
+    .gradient(@buttonColorError, darken(@buttonColorError, 2%));
+    &:hover{
+      .gradient(darken(@buttonColorError, 2%), @buttonColorError);
+    }
+    &:active {
+      box-shadow: none;
+      transform: translate(0px, 2px);
+      padding-bottom: 10px;
+    }
+  }
+
+}
