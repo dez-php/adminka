@@ -1,11 +1,6 @@
-form  {
-  & input, select, textarea, button {
-    margin-right: 10px;
-  }
-}
-
 input, select, textarea, button {
   outline: none;
+  margin-right: 10px;
 }
 
 textarea {
@@ -19,9 +14,10 @@ select, textarea {
   border: 1px solid darken(@colorWhite, 10%);
   border-radius: 4px;
   color: @colorNiceBlack;
-  //.gradient(darken(@colorWhite, 2%), @colorWhite);
+  background-color: @colorWhite;
   &:focus {
     border-color: darken(@colorWhite, 15%);
+    background-color: darken(@colorWhite, 3%);
   }
 }
 

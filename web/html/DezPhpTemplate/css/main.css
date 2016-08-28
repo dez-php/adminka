@@ -242,17 +242,12 @@ article blockquote {
   color: #FFFFFF;
   background-color: #637c8b;
 }
-form input,
-form select,
-form textarea,
-form button {
-  margin-right: 10px;
-}
 input,
 select,
 textarea,
 button {
   outline: none;
+  margin-right: 10px;
 }
 textarea {
   resize: none;
@@ -266,11 +261,13 @@ textarea {
   -webkit-border-radius: 4px;
           border-radius: 4px;
   color: #000501;
+  background-color: #FFFFFF;
 }
 input:not([type=submit]):not([type=file]):not([type=button]):focus,
 select:focus,
 textarea:focus {
   border-color: #d9d9d9;
+  background-color: #f7f7f7;
 }
 input[type=button],
 input[type=submit],
@@ -338,18 +335,18 @@ button.notice:hover {
 input[type=button].info,
 input[type=submit].info,
 button.info {
-  -webkit-box-shadow: inset 0px -5px 0 #76c17a;
-          box-shadow: inset 0px -5px 0 #76c17a;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#99D19C), to(#92ce95));
-  background-image: -webkit-linear-gradient(top, #99D19C, #92ce95);
-  background-image: linear-gradient(to bottom, #99D19C, #92ce95);
+  -webkit-box-shadow: inset 0px -5px 0 #43545e;
+          box-shadow: inset 0px -5px 0 #43545e;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#586F7C), to(#546a76));
+  background-image: -webkit-linear-gradient(top, #586F7C, #546a76);
+  background-image: linear-gradient(to bottom, #586F7C, #546a76);
 }
 input[type=button].info:hover,
 input[type=submit].info:hover,
 button.info:hover {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#92ce95), to(#99D19C));
-  background-image: -webkit-linear-gradient(top, #92ce95, #99D19C);
-  background-image: linear-gradient(to bottom, #92ce95, #99D19C);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#546a76), to(#586F7C));
+  background-image: -webkit-linear-gradient(top, #546a76, #586F7C);
+  background-image: linear-gradient(to bottom, #546a76, #586F7C);
 }
 input[type=button].cancel,
 input[type=submit].cancel,
