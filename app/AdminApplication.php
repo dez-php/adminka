@@ -29,24 +29,14 @@ class AdminApplication extends Configurable {
         }
     }
 
-    /**
-     * @return $this
-     */
-    public function configure()
+    public function initialize()
     {
-        parent::configure();
+        $this->loadModules();
 
         $this->configurationErrors()->configurationRoutes();
         $this->setOrmConnectionName($this->config['db']['connection_name']);
 
         $this->session->start();
-
-        return $this;
-    }
-
-    public function initialize()
-    {
-        $this->loadModules();
 
         return $this;
     }
@@ -94,15 +84,15 @@ class AdminApplication extends Configurable {
 
     private function loadModules()
     {
-        $iterator = new \DirectoryIterator($this->config['application']['moduleDirectory']);
-        $di = $this->getDi();
-
-        foreach($iterator as $directory) {
-            $initializer = realpath("{$directory->getPathname()}/Initializer.php");
-            if(false !== $initializer) {
-                include_once $initializer;
-            }
-        }
+//        $iterator = new \DirectoryIterator($this->config['application']['moduleDirectory']);
+//        $di = $this->getDi();
+//
+//        foreach($iterator as $directory) {
+//            $initializer = realpath("{$directory->getPathname()}/Initializer.php");
+//            if(false !== $initializer) {
+//                include_once $initializer;
+//            }
+//        }
 
         return $this;
     }
