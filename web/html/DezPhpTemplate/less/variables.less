@@ -48,12 +48,14 @@
 
 @boxColorBorder: lighten(@colorLightGray, 15%);
 
-@buttonColorSuccess: @colorMetallicSeaweed;
-@buttonColorNotice: @colorIguanaGreen;
-@buttonColorInfo: @colorGray;
+@buttonColorSuccess: @colorIguanaGreen;
+@buttonColorNotice: desaturate(lighten(@colorOrangeYellow, 10%), 25%);
+@buttonColorInfo: desaturate(@colorCyanBlue, 30%);
 @buttonColorCancel: darken(@colorOrangeYellow, 25%);
+@buttonColorWarning: desaturate(darken(@colorSalmon, 10%), 10%);
+@buttonColorError: darken(@colorCrimson, 10%);
+
 @buttonColorBrown: @colorPaleTaupe;
 @buttonColorGray: darken(@colorWhite, 30%);
 @buttonColorDark: darken(@colorWhite, 70%);
-@buttonColorWarning: darken(@colorDesertSand, 10%);
-@buttonColorError: darken(@colorCrimson, 10%);
+@buttonColorGreen: @colorBudGreen;

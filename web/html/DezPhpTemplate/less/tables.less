@@ -3,7 +3,7 @@ table.table {
   margin-bottom: 20px;
   border-collapse: collapse;
   border-spacing: 0;
-  border: 5px solid darken(@colorWhite, 15%);
+  border: 5px solid lighten(@colorLitherGray, 5%);
 
   & thead > tr > th {
     text-align: left;
@@ -13,7 +13,7 @@ table.table {
   & thead > tr > th,
   & tfoot > tr > td {
     padding: 10px;
-    background-color: darken(@colorWhite, 15%);
+    background-color: lighten(@colorLitherGray, 5%);
   }
 
   & tr > td {
@@ -22,11 +22,11 @@ table.table {
   }
 
   &.striped tr:nth-child(even) > td {
-    background-color: darken(@colorWhite, 5%);;
+    background-color: lighten(@colorLitherGray, 15%);
   }
 
   &.hovered tbody > tr:hover > td {
-    background-color: darken(@colorWhite, 5%);;
+    background-color: lighten(@colorLitherGray, 10%);
   }
 
   &.caption-upper th {

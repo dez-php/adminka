@@ -55,7 +55,7 @@ main {
   & .caption {
     border-bottom: 1px solid darken(@colorWhite, 5%);
     padding: 20px;
-    font-size: 16px;
+    font-size: 18px;
   }
 
   & .content {
@@ -80,25 +80,29 @@ main {
   font-size: 12px;
   margin-bottom: 15px;
   font-weight: 600;
-  
-  & * {
-    color: @colorSmokyBlack;
-  }
+  color: @colorSmokyBlack;
+  text-shadow: 1px 1px 1px fade(@colorWhite, 65%);
 
   &.error {
-    background-color: darken(@colorCrimson, 10%);
+    background-color: desaturate(darken(@colorCrimson, 15%), 15%);
+    text-shadow: 1px 1px 1px @colorNiceBlack;
+    color: @colorWhite;
   }
   &.notice {
-    background-color: @colorGreenSheen;
+    background-color: desaturate(darken(@colorOrangeYellow, 10%), 25%);
   }
   &.warning {
-    background-color: @colorSalmon;
+    background-color: desaturate(darken(@colorSalmon, 10%), 10%);
+    text-shadow: 1px 1px 1px @colorNiceBlack;
+    color: @colorWhite;
   }
   &.info {
-    background-color: @colorLightGray;
+    background-color: desaturate(lighten(@colorCyanBlue, 20%), 30%);
   }
   &.success {
-    background-color: @colorBudGreen;
+    background-color: darken(@colorIguanaGreen, 10%);
+    text-shadow: 1px 1px 1px @colorNiceBlack;
+    color: @colorWhite;
   }
 }
 

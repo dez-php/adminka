@@ -8,36 +8,57 @@ html, body {
   min-height: 100vh;
 }
 
+h1, h2, h3, h4 {
+  margin-bottom: 5px;
+  color: darken(@colorIguanaGreen, 10%);
+}
+
 h1 {
   font-size: 36px;
+  line-height:36px;
   font-weight: 300;
-  color: #ff4143;
 }
 
 h2 {
   font-size: 28px;
+  line-height:28px;
   font-weight: 400;
-  color: #ff4143;
 }
 
 h3 {
   font-size: 20px;
+  line-height:20px;
   font-weight: 400;
-  color: @colorLightGray;
+}
+
+h4 {
+  font-size: 16px;
+  line-height:16px;
+  font-weight: 400;
 }
 
 a {
-  color: @colorLitherGray;
+  color: darken(@colorBudGreen, 25%);
   text-decoration: none;
   transition: color .2s ease, opacity .2s ease;
   cursor: pointer;
 
   &:hover {
-    .linkHover(@colorLitherGray);
+    .linkHover(darken(@colorBudGreen, 25%));
+    text-decoration: underline;
+  }
+  &:active {
+    .linkActive(darken(@colorBudGreen, 25%));
   }
 
-  &:active {
-    .linkActive(@colorLitherGray);
+  &.light-link {
+    color: @colorWhite;
+    &:hover {
+      .linkHover(@colorWhite);
+    }
+    &:active {
+      .linkActive(@colorWhite);
+    }
   }
 }
 
@@ -46,9 +67,6 @@ p {
 }
 
 article {
-  a {
-    text-decoration: underline;
-  }
 
   ul {
     margin: 20px 0;

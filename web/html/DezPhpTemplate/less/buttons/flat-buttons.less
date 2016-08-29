@@ -26,6 +26,8 @@ button {
 
   &.notice {
     .buttonSetting(@buttonColorNotice);
+    color: @colorNiceBlack;
+    text-shadow: 1px 1px 1px fade(@colorWhite, 50%);
   }
 
   &.info {
@@ -46,6 +48,10 @@ button {
 
   &.brown {
     .buttonSetting(@buttonColorBrown);
+  }
+
+  &.green {
+    .buttonSetting(@buttonColorGreen);
   }
 
   &.gray {

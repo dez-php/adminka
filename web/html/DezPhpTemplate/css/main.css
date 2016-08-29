@@ -8,39 +8,58 @@ html,
 body {
   min-height: 100vh;
 }
+h1,
+h2,
+h3,
+h4 {
+  margin-bottom: 5px;
+  color: #58936a;
+}
 h1 {
   font-size: 36px;
+  line-height: 36px;
   font-weight: 300;
-  color: #ff4143;
 }
 h2 {
   font-size: 28px;
+  line-height: 28px;
   font-weight: 400;
-  color: #ff4143;
 }
 h3 {
   font-size: 20px;
+  line-height: 20px;
   font-weight: 400;
-  color: #8497A3;
+}
+h4 {
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 400;
 }
 a {
-  color: #C0CCD3;
+  color: #3f6f2f;
   text-decoration: none;
   -webkit-transition: color .2s ease, opacity .2s ease;
   transition: color .2s ease, opacity .2s ease;
   cursor: pointer;
 }
 a:hover {
-  color: #a2b4be;
+  color: #2b4b20;
+  text-decoration: underline;
 }
 a:active {
-  color: #93a8b4;
+  color: #203918;
+}
+a.light-link {
+  color: #FFFFFF;
+}
+a.light-link:hover {
+  color: #e6e6e6;
+}
+a.light-link:active {
+  color: #d9d9d9;
 }
 p {
   margin: 20px 0;
-}
-article a {
-  text-decoration: underline;
 }
 article ul {
   margin: 20px 0;
@@ -436,7 +455,7 @@ table.table {
   margin-bottom: 20px;
   border-collapse: collapse;
   border-spacing: 0;
-  border: 5px solid #d9d9d9;
+  border: 5px solid #cfd8dd;
 }
 table.table thead > tr > th {
   text-align: left;
@@ -445,17 +464,17 @@ table.table thead > tr > th {
 table.table thead > tr > th,
 table.table tfoot > tr > td {
   padding: 10px;
-  background-color: #d9d9d9;
+  background-color: #cfd8dd;
 }
 table.table tr > td {
   padding: 10px;
   border: 0;
 }
 table.table.striped tr:nth-child(even) > td {
-  background-color: #f2f2f2;
+  background-color: #edf0f2;
 }
 table.table.hovered tbody > tr:hover > td {
-  background-color: #f2f2f2;
+  background-color: #dee4e8;
 }
 table.table.caption-upper th {
   text-transform: uppercase;
@@ -478,55 +497,57 @@ input[type=button].success,
 input[type=submit].success,
 input[type=reset].success,
 button.success {
-  background-color: #028090;
+  background-color: #73AB84;
 }
 input[type=button].success:hover,
 input[type=submit].success:hover,
 input[type=reset].success:hover,
 button.success:hover {
-  background-color: #026a77;
+  background-color: #63a176;
 }
 input[type=button].success:active,
 input[type=submit].success:active,
 input[type=reset].success:active,
 button.success:active {
-  background-color: #01535e;
+  background-color: #58936a;
 }
 input[type=button].notice,
 input[type=submit].notice,
 input[type=reset].notice,
 button.notice {
-  background-color: #73AB84;
+  background-color: #f2dba6;
+  color: #000501;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
 }
 input[type=button].notice:hover,
 input[type=submit].notice:hover,
 input[type=reset].notice:hover,
 button.notice:hover {
-  background-color: #63a176;
+  background-color: #efd28f;
 }
 input[type=button].notice:active,
 input[type=submit].notice:active,
 input[type=reset].notice:active,
 button.notice:active {
-  background-color: #58936a;
+  background-color: #ecc979;
 }
 input[type=button].info,
 input[type=submit].info,
 input[type=reset].info,
 button.info {
-  background-color: #586F7C;
+  background-color: #2e7b95;
 }
 input[type=button].info:hover,
 input[type=submit].info:hover,
 input[type=reset].info:hover,
 button.info:hover {
-  background-color: #4d626d;
+  background-color: #286b81;
 }
 input[type=button].info:active,
 input[type=submit].info:active,
 input[type=reset].info:active,
 button.info:active {
-  background-color: #43545e;
+  background-color: #225b6e;
 }
 input[type=button].cancel,
 input[type=submit].cancel,
@@ -550,19 +571,19 @@ input[type=button].warning,
 input[type=submit].warning,
 input[type=reset].warning,
 button.warning {
-  background-color: #da9f87;
+  background-color: #d7614d;
 }
 input[type=button].warning:hover,
 input[type=submit].warning:hover,
 input[type=reset].warning:hover,
 button.warning:hover {
-  background-color: #d48f74;
+  background-color: #d34e38;
 }
 input[type=button].warning:active,
 input[type=submit].warning:active,
 input[type=reset].warning:active,
 button.warning:active {
-  background-color: #ce7f60;
+  background-color: #c5422c;
 }
 input[type=button].error,
 input[type=submit].error,
@@ -599,6 +620,24 @@ input[type=submit].brown:active,
 input[type=reset].brown:active,
 button.brown:active {
   background-color: #9e7c5e;
+}
+input[type=button].green,
+input[type=submit].green,
+input[type=reset].green,
+button.green {
+  background-color: #78bc61;
+}
+input[type=button].green:hover,
+input[type=submit].green:hover,
+input[type=reset].green:hover,
+button.green:hover {
+  background-color: #69b44f;
+}
+input[type=button].green:active,
+input[type=submit].green:active,
+input[type=reset].green:active,
+button.green:active {
+  background-color: #5ea446;
 }
 input[type=button].gray,
 input[type=submit].gray,
@@ -701,7 +740,7 @@ main .body {
 .container .caption {
   border-bottom: 1px solid #f2f2f2;
   padding: 20px;
-  font-size: 16px;
+  font-size: 18px;
 }
 .container .content {
   padding: 20px;
@@ -722,24 +761,29 @@ main .body {
   font-size: 12px;
   margin-bottom: 15px;
   font-weight: 600;
-}
-.flash-messages * {
   color: #131200;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.65);
 }
 .flash-messages.error {
-  background-color: #e2003c;
+  background-color: #b90f3c;
+  text-shadow: 1px 1px 1px #000501;
+  color: #FFFFFF;
 }
 .flash-messages.notice {
-  background-color: #70C1B3;
+  background-color: #e6b84c;
 }
 .flash-messages.warning {
-  background-color: #e9806e;
+  background-color: #d7614d;
+  text-shadow: 1px 1px 1px #000501;
+  color: #FFFFFF;
 }
 .flash-messages.info {
-  background-color: #8497A3;
+  background-color: #5db1cc;
 }
 .flash-messages.success {
-  background-color: #78bc61;
+  background-color: #58936a;
+  text-shadow: 1px 1px 1px #000501;
+  color: #FFFFFF;
 }
 .rounded-inner > * {
   -webkit-border-radius: 15px;

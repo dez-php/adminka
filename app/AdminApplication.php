@@ -40,6 +40,8 @@ class AdminApplication extends Configurable {
         $this->configurationErrors()->configurationRoutes();
         $this->setOrmConnectionName($this->config['db']['connection_name']);
 
+        $this->session->start();
+
         return $this;
     }
 
