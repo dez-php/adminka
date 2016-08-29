@@ -33,6 +33,7 @@
                     <pre><?= $message ?></pre>
                     <h4>Location</h4>
                     <pre>HIDDEN/<?= basename($location) ?></pre>
+                    <h4>Memory: <b><?= $memory; ?></b></h4>
                 </div>
             </div>
             <div class="footer">
@@ -47,7 +48,7 @@
 </main>
 
 <footer class="footer-site">
-    Adminka&nbsp;<?= date('Y'); ?>&nbsp;<button class="size-small success" onclick="window.location = 'mailto: stewie.dev@gmail.com;';">Ivan Gonatrenko</button>
+    Adminka&nbsp;<?= date('Y'); ?>&nbsp;<button class="size-small info" onclick="window.location = 'mailto: stewie.dev@gmail.com;';">Ivan Gonatrenko</button>
 </footer>
 
 </body>

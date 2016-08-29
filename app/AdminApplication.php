@@ -10,9 +10,6 @@ use Dez\Config\Config;
 use Dez\Http\Response;
 use Dez\Mvc\Application;
 use Dez\Mvc\Application\Configurable;
-use Dez\Mvc\Controller\MvcException;
-use Dez\Mvc\MvcEvent;
-use Dez\View\View;
 
 /**
  * @property Session authorizer
@@ -35,12 +32,21 @@ class AdminApplication extends Configurable {
     /**
      * @return $this
      */
-    public function initialize()
+    public function configure()
     {
+        parent::configure();
+
         $this->configurationErrors()->configurationRoutes();
         $this->setOrmConnectionName($this->config['db']['connection_name']);
 
         $this->session->start();
+
+        return $this;
+    }
+
+    public function initialize()
+    {
+        $this->loadModules();
 
         return $this;
     }
@@ -65,11 +71,38 @@ class AdminApplication extends Configurable {
     }
 
     /**
+     * @return string
+     */
+    public function memoryUsage()
+    {
+        $names = ['B', 'K', 'M', 'G', 'T'];
+        $bytes = memory_get_usage();
+        $scale = (integer) log($bytes, 1024);
+
+        return round($bytes / pow(1024, $scale), 2) . $names[$scale];
+    }
+
+    /**
      * @return $this
      */
     private function configurationRoutes()
     {
         $this->router->add('/:action.html', ['controller' => 'index',]);
+
+        return $this;
+    }
+
+    private function loadModules()
+    {
+        $iterator = new \DirectoryIterator($this->config['application']['moduleDirectory']);
+        $di = $this->getDi();
+
+        foreach($iterator as $directory) {
+            $initializer = realpath("{$directory->getPathname()}/Initializer.php");
+            if(false !== $initializer) {
+                include_once $initializer;
+            }
+        }
 
         return $this;
     }
@@ -120,6 +153,7 @@ class AdminApplication extends Configurable {
         $this->view->setMainLayout('error');
 
         $this->view->set('message', $message);
+        $this->view->set('memory', $this->memoryUsage());
         $this->view->set('location', "$file:$line");
 
         $this->response

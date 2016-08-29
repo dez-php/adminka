@@ -45,7 +45,6 @@ a {
 
   &:hover {
     .linkHover(darken(@colorBudGreen, 25%));
-    text-decoration: underline;
   }
   &:active {
     .linkActive(darken(@colorBudGreen, 25%));
@@ -67,6 +66,10 @@ p {
 }
 
 article {
+
+  & a:hover {
+    text-decoration: underline;
+  }
 
   ul {
     margin: 20px 0;

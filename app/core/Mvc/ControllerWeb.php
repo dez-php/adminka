@@ -13,12 +13,18 @@ use Dez\Mvc\Controller;
 
 class ControllerWeb extends Controller {
 
+    /**
+     * @throws \Dez\Http\Exception
+     */
     public function beforeExecute()
     {
         $this->response->setBodyFormat(Response::RESPONSE_HTML);
         $this->view->setMainLayout('index');
     }
 
+    /**
+     * @return int
+     */
     protected function authId()
     {
         return $this->authorizer->credentials()->id();

@@ -13,6 +13,7 @@ return [
         ],
         'controllerNamespace' => 'Adminka\\Controllers\\',
         'viewDirectory' => __DIR__ . '/../templates',
+        'moduleDirectory' => __DIR__ . '/../modules',
         'debug' => [
             'exceptions' => 1,
             'php_errors' => 1,

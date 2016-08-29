@@ -37,56 +37,40 @@
 <main>
 
     <menu class="menu">
-        <h2>Menu header</h2>
+        <h2>Main</h2>
         <ul>
             <li>
-                <a>Item 1</a>
+                <a href="<?= $this->url->path('index/welcome'); ?>">Dashboard</a>
             </li>
             <li>
-                <a>Item 2</a>
+                <a href="<?= $this->url->path('users/index'); ?>">Users</a>
             </li>
             <li>
-                <a>Item 3</a>
+                <a href="<?= $this->url->path('access/roles'); ?>">Access</a>
             </li>
         </ul>
 
-        <h2>
-            asdasdasd
-        </h2>
+        <h2>Modules</h2>
         <ul>
             <li>
-                <a class="active">Item 1</a>
+                <a href="<?= $this->url->path('modules/load/survey_quality'); ?>">Survey Quality</a>
             </li>
             <li>
-                <a class="text-color-yellow">Item 2</a>
-            </li>
-            <li>
-                <a>Item 3</a>
+                <a href="<?= $this->url->path('modules/load/open_shop'); ?>">Shoper</a>
             </li>
         </ul>
+
     </menu>
 
     <article class="body">
-
         <?= $this->fetch('common/flash'); ?>
-
-        <div class="container">
-            <div class="caption">
-                asd
-            </div>
-            <div class="content">
-                asdasd
-            </div>
-            <div class="footer">
-                asd
-            </div>
-        </div>
-
+        <?= $this->section('content'); ?>
     </article>
+
 </main>
 
 <footer class="footer-site">
-    Adminka&nbsp;<?= date('Y'); ?>&nbsp;<button class="size-small success" onclick="window.location = 'mailto: stewie.dev@gmail.com;';">Ivan Gonatrenko</button>
+    Adminka&nbsp;<?= date('Y'); ?>&nbsp;<button class="size-small info" onclick="window.location = 'mailto: stewie.dev@gmail.com;';">Ivan Gonatrenko</button>
 </footer>
 
 </body>
