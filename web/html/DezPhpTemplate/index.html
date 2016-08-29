@@ -3,7 +3,8 @@
 <head>
     <title>Adminka</title>
     <meta charset="UTF-8">
-    <link href='https://fonts.googleapis.com/css?family=Exo+2:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=cyrillic,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Exo+2:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=cyrillic,latin-ext'
+          rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -56,99 +57,141 @@
     <article class="body">
 
         <!--<div class="flash-messages notice">-->
-            <!--<h3>php error</h3>-->
-            <!--notice text-->
+        <!--<h3>php error</h3>-->
+        <!--notice text-->
         <!--</div>-->
 
         <!--<div class="flash-messages info">-->
-            <!--info text-->
+        <!--info text-->
         <!--</div>-->
 
         <!--<div class="flash-messages success">-->
-            <!--success text-->
+        <!--success text-->
         <!--</div>-->
 
         <!--<div class="flash-messages warning">-->
-            <!--warning text-->
+        <!--warning text-->
         <!--</div>-->
 
         <!--<div class="flash-messages error">-->
-            <!--error text-->
+        <!--error text-->
         <!--</div>-->
 
         <div class="container">
             <div class="caption">
                 Form Inputs
             </div>
-            <div class="content">
+            <div class="content form-default">
 
-                <div class="form-row">
-                    <label class="grid-2">
-                        gonevo
-                    </label>
-                    <div class="grid-8">
-                        <label class="check-item">
-                            <input class="checkbox checkbox-color-success" type="checkbox" name="a">
-                            test
+                <div style="width: 50%">
+
+                    <div class="form-row">
+                        <label>
+                            Checkboxes
                         </label>
-                        <label class="check-item">
-                            <input class="checkbox checkbox-color-notice" type="checkbox" name="a">
-                            test
-                        </label>
-                        <label class="check-item">
-                            <input class="checkbox checkbox-color-violet" type="checkbox" name="a">
-                            test
-                        </label>
-                        <label class="check-item">
-                            <input class="checkbox checkbox-color-success" type="checkbox" name="a">
-                            test
-                        </label>
-                        <label class="check-item">
-                            <input class="checkbox checkbox-color-notice" type="checkbox" name="a">
-                            test
-                        </label>
-                        <label class="check-item">
-                            <input class="checkbox checkbox-color-violet" type="checkbox" name="a">
-                            test
-                        </label>
+                        <div>
+                            <label class="check-item">
+                                <input class="checkbox" type="checkbox" name="a">
+                                test
+                            </label>
+                            <label class="check-item">
+                                <input class="checkbox" type="checkbox" name="a">
+                                test
+                            </label>
+                            <label class="check-item">
+                                <input class="checkbox" type="checkbox" name="a">
+                                test
+                            </label>
+                            <label class="check-item">
+                                <input disabled class="checkbox" type="checkbox" name="a">
+                                test
+                            </label>
+                            <label class="check-item">
+                                <input class="checkbox" type="checkbox" name="a">
+                                test
+                            </label>
+                            <label class="check-item">
+                                <input class="checkbox" type="checkbox" name="a">
+                                test
+                            </label>
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-row">
-                    <label class="grid-2">
-                        gonevo
-                    </label>
-                    <div class="grid-8">
-                        <label class="check-item">
-                            <input class="radio radio-color-light-green" type="radio" name="asd">
-                            sdfsdfdsf
+                    <div class="form-row">
+                        <label>
+                            Radio buttons<span class="help-text">
+                                    Enter your email here
+                                </span>
                         </label>
-                        <label class="check-item">
-                            <input class="radio radio-color-orange" type="radio" name="asd">
-                            sdf
-                        </label>
-                        <label class="check-item">
-                            <input class="radio radio-color-orange" type="radio" name="asd">
-                            sdf
-                        </label>
-                        <label class="check-item">
-                            <input class="radio radio-color-orange" type="radio" name="asd">
-                            asdfasdfasdfasdf
-                        </label>
-                        <label class="check-item">
-                            <input class="radio radio-color-orange" type="radio" name="asd">
-                            dfgdfg
-                        </label>
-
+                        <div>
+                            <label class="check-item">
+                                <input class="radio" type="radio" name="asd">
+                                Access roles
+                            </label>
+                            <label class="check-item">
+                                <input class="radio" type="radio" name="asd">
+                                sdf
+                            </label>
+                            <label class="check-item">
+                                <input class="radio" type="radio" name="asd">
+                                sdf
+                            </label>
+                            <label class="check-item">
+                                <input class="radio" disabled type="radio" name="asd">
+                                asdfasdfasdfasdf
+                            </label>
+                            <label class="check-item">
+                                <input class="radio" type="radio" name="asd">
+                                dfgdfg
+                            </label>
+                            <span class="help-text">
+                                Radio buttons
+                            </span>
+                        </div>
                     </div>
+
+                    <div class="form-row">
+                        <div>
+                            <label class="check-item">
+                                <input class="checkbox" type="checkbox" name="a">
+                                I accept <a href="#">terms</a>
+
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <label>
+                            Text input
+                        </label>
+                        <div>
+                            <input type="text" name="">
+                            <span class="help-text">
+                                Enter your email here
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <label>
+                            Test error field
+                        </label>
+                        <div>
+                            <input class="error" type="password" name="">
+                            <span class="help-text">
+                                Enter your email here
+                            </span>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
 
             <div class="footer">
                 <div class="button-group">
-                    <button class="success">Save</button>
-                    <button class="notice">Clear</button>
+                    <button class="notice">Save</button>
+                    <input type="reset" value="Clear" class="cancel">
                 </div>
             </div>
         </div>
@@ -222,7 +265,7 @@
                     <button class="info size-middle">
                         save
                     </button>
-                        <button class="gray size-middle">
+                    <button class="gray size-middle">
                         save and exit
                     </button>
                     <button class="brown size-middle">
@@ -246,7 +289,7 @@
 
                     <hr>
 
-                    <select name="" >
+                    <select name="">
                         <option value="">
                             asd
                         </option>
@@ -258,7 +301,7 @@
 
                     <hr>
 
-                    <input type="password" name="" >
+                    <input type="password" name="">
 
                 </form>
 
@@ -271,7 +314,7 @@
 
                 <div class="button-group">
                     <button class="notice upper">notice</button>
-                    <button class="info">info</button>
+                    <button disabled class="info">info</button>
                     <button class="cancel">cancel</button>
                     <button class="brown">brown</button>
                 </div>
@@ -296,7 +339,13 @@
                 <h1 class="hover-text-color-greeny">Header 1</h1>
 
                 <p>
-                    Lorem <a href="#">ipsum</a> dolor sit amet, consectetur adipiscing elit. Cras viverra quam orci. Nam aliquam risus et venenatis volutpat. Integer et egestas odio. Suspendisse ut euismod eros. Sed id mattis odio, et elementum lacus. Vivamus sodales massa vel mauris facilisis, at blandit ligula mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis facilisis ipsum, eget porta turpis semper quis. Aenean blandit molestie euismod. Integer aliquam, mauris in sollicitudin blandit, quam urna tincidunt neque, a cursus nisi eros eget enim. Donec vitae lobortis enim. Nulla facilisi. Vivamus eu odio quis mi fermentum interdum.
+                    Lorem <a href="#">ipsum</a> dolor sit amet, consectetur adipiscing elit. Cras viverra quam orci. Nam
+                    aliquam risus et venenatis volutpat. Integer et egestas odio. Suspendisse ut euismod eros. Sed id
+                    mattis odio, et elementum lacus. Vivamus sodales massa vel mauris facilisis, at blandit ligula
+                    mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lobortis facilisis ipsum, eget
+                    porta turpis semper quis. Aenean blandit molestie euismod. Integer aliquam, mauris in sollicitudin
+                    blandit, quam urna tincidunt neque, a cursus nisi eros eget enim. Donec vitae lobortis enim. Nulla
+                    facilisi. Vivamus eu odio quis mi fermentum interdum.
                 </p>
 
                 <pre><code>private function configurationRoutes()
@@ -327,7 +376,15 @@
                 </h2>
 
                 <p style="border-style: solid; border-spacing: 1px" class="border-color-orangered">
-                    Morbi at porta orci, <code>feugiat</code> tincidunt lectus. Aliquam feugiat ligula sit amet elit vulputate porta. Integer a neque a dui hendrerit pulvinar nec sed orci. Ut tristique sagittis quam, vulputate condimentum diam. Praesent sit amet mauris facilisis, interdum nunc vel, imperdiet turpis. Integer nec ornare lorem. Nam in justo a ipsum volutpat fermentum quis lacinia leo. Suspendisse et sapien tempor, tempus risus ac, egestas urna. In tristique mauris erat, in molestie nunc porta ac. Pellentesque ac ultricies ligula. Aenean auctor justo mi, id facilisis purus tristique quis. Suspendisse ultrices, lectus eget mollis fringilla, ligula orci facilisis ligula, et placerat sapien lectus id est. Aliquam gravida accumsan ante non aliquet. Vivamus interdum dolor eu elementum scelerisque.
+                    Morbi at porta orci, <code>feugiat</code> tincidunt lectus. Aliquam feugiat ligula sit amet elit
+                    vulputate porta. Integer a neque a dui hendrerit pulvinar nec sed orci. Ut tristique sagittis quam,
+                    vulputate condimentum diam. Praesent sit amet mauris facilisis, interdum nunc vel, imperdiet turpis.
+                    Integer nec ornare lorem. Nam in justo a ipsum volutpat fermentum quis lacinia leo. Suspendisse et
+                    sapien tempor, tempus risus ac, egestas urna. In tristique mauris erat, in molestie nunc porta ac.
+                    Pellentesque ac ultricies ligula. Aenean auctor justo mi, id facilisis purus tristique quis.
+                    Suspendisse ultrices, lectus eget mollis fringilla, ligula orci facilisis ligula, et placerat sapien
+                    lectus id est. Aliquam gravida accumsan ante non aliquet. Vivamus interdum dolor eu elementum
+                    scelerisque.
                 </p>
 
                 <hr>

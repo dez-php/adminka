@@ -249,28 +249,81 @@ button {
   outline: none;
   margin-right: 5px;
 }
+input:disabled,
+select:disabled,
+textarea:disabled,
+button:disabled {
+  opacity: .7;
+  cursor: not-allowed;
+}
 textarea {
   resize: none;
 }
-input:not([type=submit]):not([type=file]):not([type=button]),
+input[type=radio],
+input[type=checkbox] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 3px solid transparent;
+  -webkit-box-shadow: 0 0 0 2px #78bc61;
+          box-shadow: 0 0 0 2px #78bc61;
+  padding: 4px;
+  margin-right: 4px;
+  vertical-align: bottom;
+}
+input[type=radio]:checked,
+input[type=checkbox]:checked {
+  -webkit-box-shadow: 0 0 0 2px #53923e, inset 0 0 0 4px #53923e;
+          box-shadow: 0 0 0 2px #53923e, inset 0 0 0 4px #53923e;
+}
+input[type=radio] {
+  -webkit-border-radius: 8px;
+          border-radius: 8px;
+}
+input[type=text],
+input[type=password],
+input[type=url],
+input[type=tel],
+input[type=number],
+input[type=color],
+input[type=email],
 select,
 textarea {
+  min-width: 300px;
   padding: 10px;
   font-size: 12px;
-  border: 1px solid #e6e6e6;
+  border: 1px solid #D3D3D3;
   -webkit-border-radius: 4px;
           border-radius: 4px;
   color: #000501;
   background-color: #FFFFFF;
 }
-input:not([type=submit]):not([type=file]):not([type=button]):focus,
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=url]:focus,
+input[type=tel]:focus,
+input[type=number]:focus,
+input[type=color]:focus,
+input[type=email]:focus,
 select:focus,
 textarea:focus {
-  border-color: #d9d9d9;
-  background-color: #f7f7f7;
+  border-color: #adadad;
+  background-color: #fcfcfc;
+}
+input[type=text].error,
+input[type=password].error,
+input[type=url].error,
+input[type=tel].error,
+input[type=number].error,
+input[type=color].error,
+input[type=email].error,
+select.error,
+textarea.error {
+  border-color: #df462c;
 }
 input[type=button],
 input[type=submit],
+input[type=reset],
 button {
   border: none;
   color: #fff;
@@ -283,12 +336,14 @@ button {
 }
 input[type=button].size-middle,
 input[type=submit].size-middle,
+input[type=reset].size-middle,
 button.size-middle {
   padding: 8px 15px;
   font-size: 11px;
 }
 input[type=button].size-small,
 input[type=submit].size-small,
+input[type=reset].size-small,
 button.size-small {
   padding: 6px 12px;
   font-size: 10px;
@@ -299,20 +354,82 @@ button.size-small {
 }
 .button-group input[type=button],
 .button-group input[type=submit],
+.button-group input[type=reset],
 .button-group button {
   margin-right: -3px;
 }
 .button-group.size-middle input[type=button],
 .button-group.size-middle input[type=submit],
+.button-group.size-middle input[type=reset],
 .button-group.size-middle button {
   padding: 8px 15px;
   font-size: 11px;
 }
 .button-group.size-small input[type=button],
 .button-group.size-small input[type=submit],
+.button-group.size-small input[type=reset],
 .button-group.size-small button {
   padding: 6px 12px;
   font-size: 10px;
+}
+.form-row .check-item {
+  cursor: pointer;
+  display: block;
+  margin-bottom: 10px;
+}
+.form-row > label {
+  font-size: 14px;
+}
+.form-row .help-text {
+  display: block;
+  font-style: italic;
+  color: #a0a0a0;
+  font-size: 10px;
+}
+.form-default .form-row {
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+}
+.form-default .form-row > label {
+  margin-bottom: 5px;
+  display: block;
+}
+.form-default .form-row .check-item {
+  margin-left: 4px;
+}
+.form-horizontal .form-row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  margin-bottom: 20px;
+}
+.form-horizontal .form-row > label {
+  -webkit-box-flex: 5;
+  -webkit-flex: 5 0 30%;
+      -ms-flex: 5 0 30%;
+          flex: 5 0 30%;
+  text-align: right;
+  padding-right: 10px;
+}
+.form-horizontal .form-row > div {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 70%;
+      -ms-flex: 0 0 70%;
+          flex: 0 0 70%;
+  padding-left: 10px;
 }
 table.table {
   width: 100%;
@@ -345,6 +462,7 @@ table.table.caption-upper th {
 }
 input[type=button],
 input[type=submit],
+input[type=reset],
 button {
   text-shadow: 1px 1px 1px rgba(0, 5, 1, 0.5);
   -webkit-border-radius: 0;
@@ -352,116 +470,139 @@ button {
 }
 input[type=button].upper,
 input[type=submit].upper,
+input[type=reset].upper,
 button.upper {
   text-transform: uppercase;
 }
 input[type=button].success,
 input[type=submit].success,
+input[type=reset].success,
 button.success {
   background-color: #028090;
 }
 input[type=button].success:hover,
 input[type=submit].success:hover,
+input[type=reset].success:hover,
 button.success:hover {
   background-color: #026a77;
 }
 input[type=button].success:active,
 input[type=submit].success:active,
+input[type=reset].success:active,
 button.success:active {
   background-color: #01535e;
 }
 input[type=button].notice,
 input[type=submit].notice,
+input[type=reset].notice,
 button.notice {
   background-color: #73AB84;
 }
 input[type=button].notice:hover,
 input[type=submit].notice:hover,
+input[type=reset].notice:hover,
 button.notice:hover {
   background-color: #63a176;
 }
 input[type=button].notice:active,
 input[type=submit].notice:active,
+input[type=reset].notice:active,
 button.notice:active {
   background-color: #58936a;
 }
 input[type=button].info,
 input[type=submit].info,
+input[type=reset].info,
 button.info {
   background-color: #586F7C;
 }
 input[type=button].info:hover,
 input[type=submit].info:hover,
+input[type=reset].info:hover,
 button.info:hover {
   background-color: #4d626d;
 }
 input[type=button].info:active,
 input[type=submit].info:active,
+input[type=reset].info:active,
 button.info:active {
   background-color: #43545e;
 }
 input[type=button].cancel,
 input[type=submit].cancel,
+input[type=reset].cancel,
 button.cancel {
   background-color: #e5a100;
 }
 input[type=button].cancel:hover,
 input[type=submit].cancel:hover,
+input[type=reset].cancel:hover,
 button.cancel:hover {
   background-color: #cc8f00;
 }
 input[type=button].cancel:active,
 input[type=submit].cancel:active,
+input[type=reset].cancel:active,
 button.cancel:active {
   background-color: #b37d00;
 }
 input[type=button].warning,
 input[type=submit].warning,
+input[type=reset].warning,
 button.warning {
   background-color: #da9f87;
 }
 input[type=button].warning:hover,
 input[type=submit].warning:hover,
+input[type=reset].warning:hover,
 button.warning:hover {
   background-color: #d48f74;
 }
 input[type=button].warning:active,
 input[type=submit].warning:active,
+input[type=reset].warning:active,
 button.warning:active {
   background-color: #ce7f60;
 }
 input[type=button].error,
 input[type=submit].error,
+input[type=reset].error,
 button.error {
   background-color: #e2003c;
 }
 input[type=button].error:hover,
 input[type=submit].error:hover,
+input[type=reset].error:hover,
 button.error:hover {
   background-color: #c90035;
 }
 input[type=button].error:active,
 input[type=submit].error:active,
+input[type=reset].error:active,
 button.error:active {
   background-color: #af002f;
 }
 input[type=button].brown,
 input[type=submit].brown,
+input[type=reset].brown,
 button.brown {
   background-color: #B2967D;
 }
 input[type=button].brown:hover,
 input[type=submit].brown:hover,
+input[type=reset].brown:hover,
 button.brown:hover {
   background-color: #a9896d;
 }
 input[type=button].brown:active,
 input[type=submit].brown:active,
+input[type=reset].brown:active,
 button.brown:active {
   background-color: #9e7c5e;
 }
 input[type=button].gray,
 input[type=submit].gray,
+input[type=reset].gray,
 button.gray {
   background-color: #b3b3b3;
   color: #000501;
@@ -469,26 +610,31 @@ button.gray {
 }
 input[type=button].gray:hover,
 input[type=submit].gray:hover,
+input[type=reset].gray:hover,
 button.gray:hover {
   background-color: #a6a6a6;
 }
 input[type=button].gray:active,
 input[type=submit].gray:active,
+input[type=reset].gray:active,
 button.gray:active {
   background-color: #999999;
 }
 input[type=button].dark,
 input[type=submit].dark,
+input[type=reset].dark,
 button.dark {
   background-color: #4d4d4d;
 }
 input[type=button].dark:hover,
 input[type=submit].dark:hover,
+input[type=reset].dark:hover,
 button.dark:hover {
   background-color: #404040;
 }
 input[type=button].dark:active,
 input[type=submit].dark:active,
+input[type=reset].dark:active,
 button.dark:active {
   background-color: #333333;
 }
@@ -555,6 +701,7 @@ main .body {
 .container .caption {
   border-bottom: 1px solid #f2f2f2;
   padding: 20px;
+  font-size: 16px;
 }
 .container .content {
   padding: 20px;

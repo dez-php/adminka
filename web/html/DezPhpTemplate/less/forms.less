@@ -1,27 +1,59 @@
 input, select, textarea, button {
   outline: none;
   margin-right: 5px;
+  &:disabled {
+    opacity: .7;
+    cursor: not-allowed;
+  }
 }
 
 textarea {
   resize: none;
 }
 
-input:not([type=submit]):not([type=file]):not([type=button]),
-select, textarea {
+input[type=radio],
+input[type=checkbox] {
+  appearance: none;
+  border: 3px solid transparent;
+  box-shadow: 0 0 0 2px @colorBudGreen;
+  padding: 4px;
+  margin-right: 4px;
+  vertical-align: bottom;
+  &:checked {
+    box-shadow: 0 0 0 2px darken(@colorBudGreen, 15%), inset 0 0 0 4px darken(@colorBudGreen, 15%);
+  }
+}
+
+input[type=radio] {
+  border-radius: 8px;
+}
+
+input[type=text],
+input[type=password],
+input[type=url],
+input[type=tel],
+input[type=number],
+input[type=color],
+input[type=email],
+select,
+textarea {
+  min-width: 300px;
   padding: 10px;
   font-size: 12px;
-  border: 1px solid darken(@colorWhite, 10%);
+  border: 1px solid @colorNiceGray;
   border-radius: 4px;
   color: @colorNiceBlack;
   background-color: @colorWhite;
   &:focus {
-    border-color: darken(@colorWhite, 15%);
-    background-color: darken(@colorWhite, 3%);
+    border-color: darken(@colorNiceGray, 15%);
+    background-color: darken(@colorWhite, 1%);
+  }
+  &.error {
+    border-color: darken(@colorSalmon, 15%);
   }
 }
 
-input[type=button], input[type=submit], button {
+input[type=button], input[type=submit], input[type=reset], button {
   border: none;
   color: #fff;
   cursor: pointer;
@@ -42,19 +74,83 @@ input[type=button], input[type=submit], button {
 .button-group {
   display: inline-block;
   margin-right: 5px;
-  input[type=button], input[type=submit], button {
+  input[type=button], input[type=submit], input[type=reset], button {
     margin-right: -3px;
   }
   &.size-middle {
-    input[type=button], input[type=submit], button {
+    input[type=button], input[type=submit], input[type=reset], button {
       padding: 8px 15px;
       font-size: 11px;
     }
   }
   &.size-small {
-    input[type=button], input[type=submit], button{
+    input[type=button], input[type=submit], input[type=reset], button{
       padding: 6px 12px;
       font-size: 10px;
     }
   }
+}
+
+.form-row {
+  & .check-item {
+    cursor: pointer;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  & > label {
+    font-size: 14px;
+  }
+
+  & .help-text {
+    display: block;
+    font-style: italic;
+    color: darken(@colorNiceGray, 20%);
+    font-size: 10px;
+  }
+}
+
+.form-default {
+
+  & .form-row {
+
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+
+    & > label {
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    & .check-item {
+      margin-left: 4px;
+    }
+
+  }
+}
+
+.form-horizontal {
+
+  .form-row {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    margin-bottom: 20px;
+
+    & > label {
+      flex: 5 0 30%;
+      text-align: right;
+      padding-right: 10px;
+    }
+
+    & > div {
+      flex: 0 0 70%;
+      padding-left: 10px;
+    }
+  }
+
+
+
 }
