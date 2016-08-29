@@ -1,6 +1,6 @@
 input, select, textarea, button {
   outline: none;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 
 textarea {
@@ -23,10 +23,23 @@ select, textarea {
 
 input[type=button], input[type=submit], button {
   border: none;
-  padding: 10px 20px;
   color: #fff;
   cursor: pointer;
   border-radius: 4px;
-  padding-bottom: 12px;
+  padding: 10px 20px 12px;
+
+  .size-middle {
+    padding: 10px 20px 12px;
+  }
+  .size-small {
+    padding: 10px 20px 12px;
+  }
 }
 
+.button-group {
+  display: inline-block;
+  margin-right: 5px;
+  input[type=button], input[type=submit], button {
+    margin-right: -3px;
+  }
+}

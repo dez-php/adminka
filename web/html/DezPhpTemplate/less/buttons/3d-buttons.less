@@ -14,6 +14,14 @@ button {
     padding-bottom: 10px;
   }
 
+  table.table td > & {
+    box-shadow: none;
+    &:active {
+      transform: none;
+      padding-bottom: 0;
+    }
+  }
+
   .buttonSetting(@buttonColor: darken(@buttonColorGray, 10%), @shadowFactor: 10%) {
     box-shadow: inset 0px -5px 0 darken(@buttonColor, @shadowFactor);
     .gradient(@buttonColor, darken(@buttonColor, 2%));

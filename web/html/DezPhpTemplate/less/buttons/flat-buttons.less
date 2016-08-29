@@ -1,0 +1,58 @@
+input[type=button],
+input[type=submit],
+button {
+
+  //text-shadow: 1px 1px 1px #000;
+  border-radius: 0;
+
+  &.upper {
+    text-transform: uppercase;
+  }
+
+  .buttonSetting(@buttonColor: darken(@buttonColorGray, 10%)) {
+    background-color: @buttonColor;
+    &:hover{
+      background-color: darken(@buttonColor, 5%);
+    }
+    &:active {
+      background-color: darken(@buttonColor, 10%);
+    }
+  }
+
+  &.success {
+    .buttonSetting(@buttonColorSuccess);
+  }
+
+  &.notice {
+    .buttonSetting(@buttonColorNotice);
+  }
+
+  &.info {
+    .buttonSetting(@buttonColorInfo);
+  }
+
+  &.cancel {
+    .buttonSetting(@buttonColorCancel);
+  }
+
+  &.warning {
+    .buttonSetting(@buttonColorWarning);
+  }
+
+  &.error {
+    .buttonSetting(@buttonColorError);
+  }
+
+  &.brown {
+    .buttonSetting(@buttonColorBrown);
+  }
+
+  &.gray {
+    .buttonSetting(@buttonColorGray);
+  }
+
+  &.dark {
+    .buttonSetting(@buttonColorDark);
+  }
+
+}

@@ -4,7 +4,8 @@
 @import "header";
 @import "menu";
 @import "forms";
-@import "buttons/3d-buttons";
+@import "tables";
+@import "buttons/flat-buttons";
 
 * {
   font-family: 'Exo 2', 'Open Sans', sans-serif;
@@ -56,11 +57,11 @@ main {
     padding: 20px;
   }
 
-  & .box {
+  & .content {
     padding: 20px;
   }
 
-  & .footer-panel {
+  & .footer {
     border-top: 1px solid darken(@colorWhite, 5%);
     padding: 20px;
     background-color: darken(@colorWhite, 2%);
@@ -70,7 +71,41 @@ main {
 
 }
 
-.footer {
+.flash-messages {
+
+  border: 0;
+  padding: 15px;
+  background-color: @colorLitherGray;
+  font-size: 12px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  
+  & * {
+    color: @colorSmokyBlack;
+  }
+
+  &.error {
+    background-color: darken(@colorCrimson, 10%);
+  }
+  &.notice {
+    background-color: @colorGreenSheen;
+  }
+  &.warning {
+    background-color: @colorSalmon;
+  }
+  &.info {
+    background-color: @colorLightGray;
+  }
+  &.success {
+    background-color: @colorBudGreen;
+  }
+}
+
+.rounded-inner > * {
+  border-radius: 15px;
+}
+
+.footer-site {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;

@@ -1,0 +1,36 @@
+table.table {
+  width: 100%;
+  margin-bottom: 20px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 5px solid darken(@colorWhite, 15%);
+
+  & thead > tr > th {
+    text-align: left;
+    font-weight: 600;
+  }
+
+  & thead > tr > th,
+  & tfoot > tr > td {
+    padding: 10px;
+    background-color: darken(@colorWhite, 15%);
+  }
+
+  & tr > td {
+    padding: 10px;
+    border: 0;
+  }
+
+  &.striped tr:nth-child(even) > td {
+    background-color: darken(@colorWhite, 5%);;
+  }
+
+  &.hovered tbody > tr:hover > td {
+    background-color: darken(@colorWhite, 5%);;
+  }
+
+  &.caption-upper th {
+    text-transform: uppercase;
+  }
+
+}
