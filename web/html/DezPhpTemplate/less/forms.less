@@ -26,13 +26,16 @@ input[type=button], input[type=submit], button {
   color: #fff;
   cursor: pointer;
   border-radius: 4px;
-  padding: 10px 20px 12px;
+  padding: 10px 20px;
+  transition: color .2s ease, opacity .2s ease, background-color .2s ease;
 
-  .size-middle {
-    padding: 10px 20px 12px;
+  &.size-middle {
+    padding: 8px 15px;
+    font-size: 11px;
   }
-  .size-small {
-    padding: 10px 20px 12px;
+  &.size-small {
+    padding: 6px 12px;
+    font-size: 10px;
   }
 }
 
@@ -41,5 +44,17 @@ input[type=button], input[type=submit], button {
   margin-right: 5px;
   input[type=button], input[type=submit], button {
     margin-right: -3px;
+  }
+  &.size-middle {
+    input[type=button], input[type=submit], button {
+      padding: 8px 15px;
+      font-size: 11px;
+    }
+  }
+  &.size-small {
+    input[type=button], input[type=submit], button{
+      padding: 6px 12px;
+      font-size: 10px;
+    }
   }
 }

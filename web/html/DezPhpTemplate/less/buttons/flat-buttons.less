@@ -2,7 +2,7 @@ input[type=button],
 input[type=submit],
 button {
 
-  //text-shadow: 1px 1px 1px #000;
+  text-shadow: 1px 1px 1px fade(@colorNiceBlack, 50%);
   border-radius: 0;
 
   &.upper {
@@ -49,6 +49,8 @@ button {
 
   &.gray {
     .buttonSetting(@buttonColorGray);
+    color: @colorNiceBlack;
+    text-shadow: 1px 1px 1px fade(@colorWhite, 50%);
   }
 
   &.dark {

@@ -277,17 +277,21 @@ button {
   cursor: pointer;
   -webkit-border-radius: 4px;
           border-radius: 4px;
-  padding: 10px 20px 12px;
+  padding: 10px 20px;
+  -webkit-transition: color 0.2s ease, opacity 0.2s ease, background-color 0.2s ease;
+  transition: color 0.2s ease, opacity 0.2s ease, background-color 0.2s ease;
 }
-input[type=button] .size-middle,
-input[type=submit] .size-middle,
-button .size-middle {
-  padding: 10px 20px 12px;
+input[type=button].size-middle,
+input[type=submit].size-middle,
+button.size-middle {
+  padding: 8px 15px;
+  font-size: 11px;
 }
-input[type=button] .size-small,
-input[type=submit] .size-small,
-button .size-small {
-  padding: 10px 20px 12px;
+input[type=button].size-small,
+input[type=submit].size-small,
+button.size-small {
+  padding: 6px 12px;
+  font-size: 10px;
 }
 .button-group {
   display: inline-block;
@@ -297,6 +301,18 @@ button .size-small {
 .button-group input[type=submit],
 .button-group button {
   margin-right: -3px;
+}
+.button-group.size-middle input[type=button],
+.button-group.size-middle input[type=submit],
+.button-group.size-middle button {
+  padding: 8px 15px;
+  font-size: 11px;
+}
+.button-group.size-small input[type=button],
+.button-group.size-small input[type=submit],
+.button-group.size-small button {
+  padding: 6px 12px;
+  font-size: 10px;
 }
 table.table {
   width: 100%;
@@ -330,6 +346,7 @@ table.table.caption-upper th {
 input[type=button],
 input[type=submit],
 button {
+  text-shadow: 1px 1px 1px rgba(0, 5, 1, 0.5);
   -webkit-border-radius: 0;
           border-radius: 0;
 }
@@ -447,6 +464,8 @@ input[type=button].gray,
 input[type=submit].gray,
 button.gray {
   background-color: #b3b3b3;
+  color: #000501;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
 }
 input[type=button].gray:hover,
 input[type=submit].gray:hover,
