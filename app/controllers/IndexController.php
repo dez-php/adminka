@@ -9,7 +9,7 @@ class IndexController extends ControllerWeb {
     public function indexAction()
     {
         $this->flash->success("Welcome to Adminka!");
-        $this->redirect('index/welcome');
+//        $this->redirect('index/welcome');
     }
 
     public function welcomeAction()
