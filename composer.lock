@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8fb8be75f65a2609085db45eda1e08c7",
+    "hash": "15a3af9af78cdb20456cece0a5ca8735",
     "content-hash": "e6c5192ca79013798dda293607ee5971",
     "packages": [
         {
@@ -577,16 +577,16 @@
         },
         {
             "name": "dez-php/dez-router",
-            "version": "v1.2.2",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dez-php/dez-router.git",
-                "reference": "b65732ac99dfd5487b83001ee131716324e3bbd7"
+                "reference": "264ee0d25b8443bb86f3cc3d3f8d7d928242fa28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dez-php/dez-router/zipball/b65732ac99dfd5487b83001ee131716324e3bbd7",
-                "reference": "b65732ac99dfd5487b83001ee131716324e3bbd7",
+                "url": "https://api.github.com/repos/dez-php/dez-router/zipball/264ee0d25b8443bb86f3cc3d3f8d7d928242fa28",
+                "reference": "264ee0d25b8443bb86f3cc3d3f8d7d928242fa28",
                 "shasum": ""
             },
             "require": {
@@ -617,7 +617,7 @@
                 "php router",
                 "router"
             ],
-            "time": "2016-07-02 11:37:54"
+            "time": "2016-08-30 10:29:03"
         },
         {
             "name": "dez-php/dez-session",
