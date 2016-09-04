@@ -2,20 +2,22 @@
 
 namespace Adminka;
 
+use Adminka\Core\Template\ExtensionCore;
 use Dez\Authorizer\Adapter\Session;
 use Dez\Authorizer\Models\Auth\SessionModel;
 use Dez\Authorizer\Models\Auth\TokenModel;
 use Dez\Authorizer\Models\CredentialModel;
 use Dez\Config\Config;
+use Dez\DependencyInjection\Service;
 use Dez\Http\Response;
 use Dez\Mvc\Application;
-use Dez\Mvc\Application\Configurable;
+use Dez\Template\Template;
 
 /**
  * @property Session authorizer
  */
 
-class AdminApplication extends Configurable {
+class AdminApplication extends Application\ConfigurableApplication {
 
     /**
      * AdminApplication constructor.
@@ -31,10 +33,14 @@ class AdminApplication extends Configurable {
 
     public function initialize()
     {
+
         $this->loadModules();
 
         $this->configurationErrors()->configurationRoutes();
-        $this->setOrmConnectionName($this->config['db']['connection_name']);
+
+        $this->view->registerExtension(new ExtensionCore());
+
+        $this->view->addDirectory('shop', '/var/www/my/adminka/app/modules/TestModule/templates');
 
         $this->session->start();
 
@@ -139,15 +145,19 @@ class AdminApplication extends Configurable {
     {
         ob_clean();
 
-        $this->view->setRendered(false);
-        $this->view->setMainLayout('error');
+        $this->view->batch([
+            'message' => $message,
+            'memory' => $this->memoryUsage(),
+            'location' => "$file:$line",
+        ]);
 
-        $this->view->set('message', $message);
-        $this->view->set('memory', $this->memoryUsage());
-        $this->view->set('location', "$file:$line");
+        /** @var Service $service */
+        foreach($this->getDi() as $service) {
+            $this->view->set($service->getName(), $this->getDi()->get($service->getName()));
+        }
 
         $this->response
-            ->setContent($this->view->render())
+            ->setContent($this->view->render('error'))
             ->setBodyFormat(Response::RESPONSE_HTML)
             ->send();
         die();

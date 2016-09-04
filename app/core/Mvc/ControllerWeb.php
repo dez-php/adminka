@@ -19,7 +19,7 @@ class ControllerWeb extends Controller {
     public function beforeExecute()
     {
         $this->response->setBodyFormat(Response::RESPONSE_HTML);
-        $this->view->setMainLayout('index');
+        $this->setLayout('index');
     }
 
     /**

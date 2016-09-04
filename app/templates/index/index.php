@@ -7,8 +7,8 @@
     </div>
     <div class="footer">
         <div class="button-group">
-            <a class="button success" href="<?= $this->url->path('/'); ?>">Homepage</a>
-            <a class="button error" href="<?= $this->url->path('/'); ?>">Logout</a>
+            <a class="button success" href="<?= $url->path('/'); ?>">Homepage</a>
+            <a class="button error" href="<?= $url->path('/'); ?>">Logout</a>
         </div>
     </div>
 </div>

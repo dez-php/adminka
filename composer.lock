@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "15a3af9af78cdb20456cece0a5ca8735",
+    "hash": "8fb8be75f65a2609085db45eda1e08c7",
     "content-hash": "e6c5192ca79013798dda293607ee5971",
     "packages": [
         {
@@ -479,31 +479,33 @@
         },
         {
             "name": "dez-php/dez-mvc-app",
-            "version": "v2.0.0",
+            "version": "v2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dez-php/dez-mvc-app.git",
-                "reference": "ba2cea658e5b03cd0bd739466cc1c4592994bd89"
+                "reference": "4bc9c059c890578051de341f72d554c1d58a89e1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dez-php/dez-mvc-app/zipball/ba2cea658e5b03cd0bd739466cc1c4592994bd89",
-                "reference": "ba2cea658e5b03cd0bd739466cc1c4592994bd89",
+                "url": "https://api.github.com/repos/dez-php/dez-mvc-app/zipball/4bc9c059c890578051de341f72d554c1d58a89e1",
+                "reference": "4bc9c059c890578051de341f72d554c1d58a89e1",
                 "shasum": ""
             },
             "require": {
                 "dez-php/dez-authorizer": "~2.0",
-                "dez-php/dez-configuration": ">=1.0",
-                "dez-php/dez-di": ">=1.0",
-                "dez-php/dez-event": ">=1.0",
-                "dez-php/dez-flash": ">=1.0",
-                "dez-php/dez-http": ">=1.0",
-                "dez-php/dez-loader": ">=1.0",
-                "dez-php/dez-orm": ">=1.0",
-                "dez-php/dez-router": ">=1.0",
-                "dez-php/dez-session": ">=1.0",
-                "dez-php/dez-url": ">=1.0",
-                "dez-php/dez-view": ">=1.0",
+                "dez-php/dez-configuration": "~1.0",
+                "dez-php/dez-data-validation": "~1.0",
+                "dez-php/dez-di": "~1.0",
+                "dez-php/dez-event": "~1.0",
+                "dez-php/dez-flash": "~1.0",
+                "dez-php/dez-html": "~0.1",
+                "dez-php/dez-http": "~1.0",
+                "dez-php/dez-loader": "~1.0",
+                "dez-php/dez-orm": "~1.0",
+                "dez-php/dez-router": "~1.0",
+                "dez-php/dez-session": "~1.0",
+                "dez-php/dez-template": "~0.1",
+                "dez-php/dez-url": "~1.0",
                 "php": ">=5.5"
             },
             "type": "library",
@@ -529,7 +531,7 @@
                 "mvc app",
                 "php mvc"
             ],
-            "time": "2016-08-23 10:42:54"
+            "time": "2016-09-04 10:53:16"
         },
         {
             "name": "dez-php/dez-orm",
@@ -577,16 +579,16 @@
         },
         {
             "name": "dez-php/dez-router",
-            "version": "v1.3.0",
+            "version": "v1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dez-php/dez-router.git",
-                "reference": "264ee0d25b8443bb86f3cc3d3f8d7d928242fa28"
+                "reference": "0ecd5cd57f17106db0202428a1a5e7d4954efa40"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dez-php/dez-router/zipball/264ee0d25b8443bb86f3cc3d3f8d7d928242fa28",
-                "reference": "264ee0d25b8443bb86f3cc3d3f8d7d928242fa28",
+                "url": "https://api.github.com/repos/dez-php/dez-router/zipball/0ecd5cd57f17106db0202428a1a5e7d4954efa40",
+                "reference": "0ecd5cd57f17106db0202428a1a5e7d4954efa40",
                 "shasum": ""
             },
             "require": {
@@ -617,7 +619,7 @@
                 "php router",
                 "router"
             ],
-            "time": "2016-08-30 10:29:03"
+            "time": "2016-08-30 19:45:27"
         },
         {
             "name": "dez-php/dez-session",
@@ -660,6 +662,49 @@
                 "session"
             ],
             "time": "2015-10-30 20:01:14"
+        },
+        {
+            "name": "dez-php/dez-template",
+            "version": "v0.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dez-php/dez-template.git",
+                "reference": "c7b5d30bc0ed6fa98019e3cf25aa9b424704a065"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dez-php/dez-template/zipball/c7b5d30bc0ed6fa98019e3cf25aa9b424704a065",
+                "reference": "c7b5d30bc0ed6fa98019e3cf25aa9b424704a065",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dez\\Template\\": "src/Template"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Gontarenko",
+                    "email": "stewie.dev@gmail.com"
+                }
+            ],
+            "description": "Simple View Component",
+            "keywords": [
+                "mvc view",
+                "php template",
+                "php view",
+                "template",
+                "view"
+            ],
+            "time": "2016-09-04 10:41:12"
         },
         {
             "name": "dez-php/dez-url",
@@ -707,50 +752,6 @@
                 "url builder"
             ],
             "time": "2016-03-23 11:17:36"
-        },
-        {
-            "name": "dez-php/dez-view",
-            "version": "v1.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dez-php/dez-view.git",
-                "reference": "9aab478cf3b0b82cea044bd236c7dfcc959f467c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dez-php/dez-view/zipball/9aab478cf3b0b82cea044bd236c7dfcc959f467c",
-                "reference": "9aab478cf3b0b82cea044bd236c7dfcc959f467c",
-                "shasum": ""
-            },
-            "require": {
-                "dez-php/dez-collection": ">=1.0",
-                "dez-php/dez-di": ">=1.0",
-                "dez-php/dez-event": ">=1.0",
-                "php": ">=5.5"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Dez\\View\\": "src/View"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Ivan Gontarenko",
-                    "email": "vania.gontarenko@gmail.com"
-                }
-            ],
-            "description": "View Component",
-            "keywords": [
-                "dez-php view",
-                "php view",
-                "view"
-            ],
-            "time": "2015-12-29 11:04:24"
         }
     ],
     "packages-dev": [],
