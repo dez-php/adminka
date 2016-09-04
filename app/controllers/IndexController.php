@@ -30,8 +30,7 @@ class IndexController extends ControllerWeb {
 
     public function dumpRoutesAction()
     {
-        $this->setLayout(null);
-        $this->response->setBodyFormat(Response::RESPONSE_JSON);
+        $this->setLayout('index');
 
         $routes = [];
 
@@ -39,7 +38,7 @@ class IndexController extends ControllerWeb {
             $routes[] = $route->getPseudoPattern();
         }
 
-        return $routes;
+        return '<pre>'. json_encode($routes, JSON_PRETTY_PRINT) .'</pre>';
     }
 
 }

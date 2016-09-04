@@ -9,7 +9,7 @@ class IndexController extends Controller {
     public function indexAction()
     {
         $this->setLayout('index');
-        return __METHOD__;
+        return $this->getReflectionClass()->getFileName();
     }
 
 }

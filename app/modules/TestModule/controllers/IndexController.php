@@ -8,9 +8,9 @@ class IndexController extends Controller {
 
     public function indexAction()
     {
-        $this->setLayout('index');
+//        $this->setLayout('index');
 
-        return $this->view->render('max_shop::index/index');
+        return $this->view->render('sq::index/index');
     }
 
     public function productDataAction($id = 0)
