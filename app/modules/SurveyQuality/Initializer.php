@@ -1,6 +1,6 @@
 <?php
 
-namespace TestModule;
+namespace SurveyQuality;
 
 use Adminka\Core\InjectableAware;
 use Adminka\Core\Module\ModuleInitializerInterface;
@@ -16,29 +16,29 @@ class Initializer extends InjectableAware implements ModuleInitializerInterface 
             __NAMESPACE__ . '\\Controllers' => __DIR__ . '/controllers'
         ])->register();
 
-        $this->router->add('/shopper', [
+        $this->router->add('/survey_quality', [
             'namespace' => __NAMESPACE__ . '\\Controllers'
         ]);
 
-        $this->router->add('/shopper/:action', [
+        $this->router->add('/survey_quality/:action', [
             'namespace' => __NAMESPACE__ . '\\Controllers'
         ]);
 
-        $this->router->add('/shopper/:controller/:action', [
+        $this->router->add('/survey_quality/:controller/:action', [
             'namespace' => __NAMESPACE__ . '\\Controllers'
         ]);
 
-        $this->router->add('/shopper/:controller/:action/:id', [
+        $this->router->add('/survey_quality/:controller/:action/:id', [
             'namespace' => __NAMESPACE__ . '\\Controllers'
         ]);
 
-        $this->router->add('/shopper/:id', [
+        $this->router->add('/survey_quality/:id', [
             'namespace' => __NAMESPACE__ . '\\Controllers',
             'controller' => 'product',
             'action' => 'item',
         ]);
 
-        $this->view->addDirectory('max_shop', __DIR__ . '/templates');
+        $this->view->addDirectory('sq', __DIR__ . '/templates');
     }
 
 }

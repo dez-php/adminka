@@ -2,6 +2,8 @@
 
 namespace Adminka;
 
+use Adminka\Core\Module\ModuleException;
+use Adminka\Core\Module\ModuleInitializerInterface;
 use Adminka\Core\Template\ExtensionCore;
 use Dez\Authorizer\Adapter\Session;
 use Dez\Authorizer\Models\Auth\SessionModel;
@@ -25,24 +27,17 @@ class AdminApplication extends Application\ConfigurableApplication {
     {
         parent::__construct(Config::factory(include_once __DIR__ . '/config/admin.config.php'));
 
-        if(file_exists($this->config['application']['dev-config'])) {
-            $this->config->merge(Config::factory($this->config['application']['dev-config']));
+        if(file_exists($this->config->path('application/dev-config', '/'))) {
+            $this->config->merge(Config::factory($this->config->path('application/dev-config', '/')));
         }
     }
 
     public function initialize()
     {
-
-        $this->loadModules();
-
         $this->configurationErrors()->configurationRoutes();
-
         $this->view->registerExtension(new ExtensionCore());
-
-        $this->view->addDirectory('shop', '/var/www/my/adminka/app/modules/TestModule/templates');
-
         $this->session->start();
-
+        $this->loadModules();
         return $this;
     }
 
@@ -89,15 +84,22 @@ class AdminApplication extends Application\ConfigurableApplication {
 
     private function loadModules()
     {
-//        $iterator = new \DirectoryIterator($this->config['application']['moduleDirectory']);
-//        $di = $this->getDi();
-//
-//        foreach($iterator as $directory) {
-//            $initializer = realpath("{$directory->getPathname()}/Initializer.php");
-//            if(false !== $initializer) {
-//                include_once $initializer;
-//            }
-//        }
+        $iterator = new \DirectoryIterator($this->config->path('application.module.root_directory'));
+
+        foreach($iterator as $directory) {
+            $initializerFile = realpath("{$directory->getPathname()}/Initializer.php");
+            if(false !== $initializerFile) {
+                $initializer = include_once $initializerFile;
+                if(!is_object($initializer) || !($initializer instanceof ModuleInitializerInterface)) {
+                    throw new ModuleException('Initializer was found but it not implemented :interface', [
+                        'interface' => ModuleInitializerInterface::class
+                    ]);
+                } else {
+                    $initializer->setDi($this->getDi());
+                    $initializer->initialize();
+                }
+            }
+        }
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace TestModule\Controllers;
+namespace SurveyQuality\Controllers;
 
 use Dez\Mvc\Controller;
 
@@ -8,7 +8,8 @@ class IndexController extends Controller {
 
     public function indexAction()
     {
-
+        $this->setLayout('index');
+        return __METHOD__;
     }
 
 }

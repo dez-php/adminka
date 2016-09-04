@@ -53,10 +53,10 @@
         <h2>Modules</h2>
         <ul>
             <li>
-                <a href="<?= $url->path('modules/load/survey_quality'); ?>">Survey Quality</a>
+                <a href="<?= $url->path('/survey_quality'); ?>">Survey Quality</a>
             </li>
             <li>
-                <a href="<?= $url->path('modules/load/open_shop'); ?>">Shoper</a>
+                <a href="<?= $url->path('/shopper'); ?>">Shoper</a>
             </li>
         </ul>
 

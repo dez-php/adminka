@@ -18,25 +18,4 @@ use Dez\Session\Adapter;
 use Dez\Url\Url;
 use Dez\View\View;
 
-/**
- * Class Application
- * @package Dez\Mvc
- *
- * @property Loader loader
- * @property Config config
- * @property Dispatcher eventDispatcher
- * @property Dispatcher event
- * @property Request request
- * @property Cookies cookies
- * @property Response response
- * @property Adapter session
- * @property Router router
- * @property Url url
- * @property View view
- * @property Connection db
- * @property Token authorizerToken
- * @property Session authorizerSession
- * @property Session flash
- */
-
-abstract class InjectableAware extends Injectable { }
+abstract class InjectableAware extends Injectable implements \Dez\Mvc\InjectableAware { }

@@ -22,7 +22,7 @@ return [
             'root_directory' => __DIR__ . '/../templates',
         ],
         'module' => [
-            'roo_directory' => __DIR__ . '/../modules'
+            'root_directory' => __DIR__ . '/../modules'
         ],
         'debug' => [
             'exceptions' => 1,
