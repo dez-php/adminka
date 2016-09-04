@@ -11,7 +11,6 @@ use Dez\Config\Config;
 use Dez\DependencyInjection\Service;
 use Dez\Http\Response;
 use Dez\Mvc\Application;
-use Dez\Template\Template;
 
 /**
  * @property Session authorizer
