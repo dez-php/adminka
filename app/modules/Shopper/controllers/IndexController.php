@@ -1,10 +1,18 @@
 <?php
 
-namespace TestModule\Controllers;
+namespace Shopper\Controllers;
 
 use Dez\Mvc\Controller;
 
 class IndexController extends Controller {
+
+    public function welcomeAction()
+    {
+        $this->setLayout('index');
+        return $this->view->fetch('shopper::index/product_data', [
+            'id' => __METHOD__
+        ]);
+    }
 
     public function indexAction()
     {
@@ -24,7 +32,7 @@ class IndexController extends Controller {
 
     public function orderAction()
     {
-        $this->setLayout('index');
+        $this->setLayout('sq::index');
 
         return $this->view->fetch('max_shop::index/product_data', [
             'id' => __METHOD__

@@ -42,7 +42,7 @@
             </div>
             <div class="footer">
                 <div class="button-group">
-                    <a class="button notice" href="<?= $this->url('index:index', [], ['return' => 'from_error_page']); ?>">Home Page</a>
+                    <a class="button notice" href="<?= $this->url('index/index', ['return' => 'from_error_page']); ?>">Home Page</a>
                     <a class="button error" href="mailto: stewie.dev@gmail.com;">Report Error</a>
                 </div>
             </div>

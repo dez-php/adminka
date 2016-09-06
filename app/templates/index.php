@@ -3,6 +3,7 @@
  * @var string $message
  * @var string $location
  * @var \Dez\Http\Response $response
+ * @var \Adminka\Core\Module\ModuleInitializerInterface[] $modules
  */
 ?>
 <!DOCTYPE html>
@@ -53,10 +54,9 @@
         <h2>Modules</h2>
         <ul>
             <li>
-                <a href="<?= $url->path('/survey_quality'); ?>">Survey Quality</a>
-            </li>
-            <li>
-                <a href="<?= $url->path('/shopper'); ?>">Shoper</a>
+                <?php foreach($modules as $module): ?>
+                <a href="<?= $module->url() ?>"><?= $module->name() ?></a>
+                <?php endforeach; ?>
             </li>
         </ul>
 
@@ -70,7 +70,7 @@
 </main>
 
 <footer class="footer-site">
-    Adminka&nbsp;<?= date('Y'); ?>&nbsp;<button class="size-small info" onclick="window.location = 'mailto: stewie.dev@gmail.com;';">Ivan Gonatrenko</button>
+    Adminka&nbsp;<?= date('Y'); ?>&nbsp;&nbsp;&nbsp;&nbsp;<a class="button size-small info" target="_blank" href="https://github.com/dez-php">Ivan Gonatrenko</a>
 </footer>
 
 </body>

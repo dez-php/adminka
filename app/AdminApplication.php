@@ -32,6 +32,10 @@ class AdminApplication extends Application\ConfigurableApplication {
         }
     }
 
+    /**
+     * @return $this
+     * @throws ModuleException
+     */
     public function initialize()
     {
         $this->configurationErrors()->configurationRoutes();
@@ -82,6 +86,10 @@ class AdminApplication extends Application\ConfigurableApplication {
         return $this;
     }
 
+    /**
+     * @return $this
+     * @throws ModuleException
+     */
     private function loadModules()
     {
         $iterator = new \DirectoryIterator($this->config->path('application.module.root_directory'));
@@ -89,14 +97,21 @@ class AdminApplication extends Application\ConfigurableApplication {
         foreach($iterator as $directory) {
             $initializerFile = realpath("{$directory->getPathname()}/Initializer.php");
             if(false !== $initializerFile) {
-                $initializer = include_once $initializerFile;
-                if(!is_object($initializer) || !($initializer instanceof ModuleInitializerInterface)) {
-                    throw new ModuleException('Initializer was found but it not implemented :interface', [
-                        'interface' => ModuleInitializerInterface::class
-                    ]);
+                $module = include_once $initializerFile;
+                if(is_object($module)) {
+                    if(!($module instanceof ModuleInitializerInterface)) {
+                        throw new ModuleException('Initializer was found but it not implemented :interface', [
+                            'interface' => ModuleInitializerInterface::class
+                        ]);
+                    } else {
+                        $module->setDi($this->getDi());
+                        $module->initialize();
+                        $this->view->data()->push('modules', $module);
+                    }
                 } else {
-                    $initializer->setDi($this->getDi());
-                    $initializer->initialize();
+                    throw new ModuleException('Initializer file [:file] should return object but it null given', [
+                        'file' => $initializerFile
+                    ]);
                 }
             }
         }
@@ -161,7 +176,8 @@ class AdminApplication extends Application\ConfigurableApplication {
             ->setContent($this->view->render('error'))
             ->setBodyFormat(Response::RESPONSE_HTML)
             ->send();
-        die();
+
+        die;
     }
 
     /**
