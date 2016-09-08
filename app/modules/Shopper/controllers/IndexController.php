@@ -2,32 +2,24 @@
 
 namespace Shopper\Controllers;
 
-use Dez\Mvc\Controller;
+use Shopper\Core\Mvc\ControllerWeb;
 
-class IndexController extends Controller {
+class IndexController extends ControllerWeb {
 
     public function welcomeAction()
     {
-        $this->setLayout('index');
-        return $this->view->fetch('shopper::index/product_data', [
-            'id' => __METHOD__
-        ]);
+//        $this->setLayout('index');
+        $this->view->set('id', __FILE__);
     }
 
     public function indexAction()
     {
-//        $this->setLayout('index');
 
-        return $this->view->render('sq::index/index');
     }
 
     public function productDataAction($id = 0)
     {
-        $this->setLayout('index');
 
-        return $this->view->fetch('max_shop::index/product_data', [
-            'id' => $id
-        ]);
     }
 
     public function orderAction()

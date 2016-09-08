@@ -1,1 +1,0 @@
-<h1>Product Page #<?= $id ?></h1>

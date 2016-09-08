@@ -25,6 +25,9 @@
         <a href="/">adminka</a>
     </section>
     <nav class="header-menu">
+        <?php if($this->hasSection('header_menu')): ?>
+        <?= $this->section('header_menu'); ?>
+        <?php else: ?>
         <a class="text-color-orange" href="#">Header item 23</a>
         <a href="#">Header item 2</a>
         <a href="#">Header item 3</a>
@@ -32,6 +35,7 @@
         <a href="#">Header item 2</a>
         <a href="#">Header item 3</a>
         <a href="#" class="upper">Header item 4</a>
+        <?php endif; ?>
     </nav>
 </header>
 

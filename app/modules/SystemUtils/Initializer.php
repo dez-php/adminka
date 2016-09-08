@@ -1,20 +1,19 @@
 <?php
 
-namespace Shopper;
-
+namespace SystemUtils;
 use Adminka\Core\InjectableAware;
 use Adminka\Core\Module\ModuleInitializerInterface;
 use Dez\Config\Config;
 
 /**
  * Class Initializer
- * @package Shopper
+ * @package SystemUtils
  */
 class Initializer extends InjectableAware implements ModuleInitializerInterface {
 
     const VERSION = '1.0.0';
 
-    const SHORT_NAME = 'Shopper';
+    const SHORT_NAME = 'System Utils';
 
     /**
      * @return string
@@ -26,7 +25,7 @@ class Initializer extends InjectableAware implements ModuleInitializerInterface 
 
     public function url()
     {
-        return $this->url->path('shopper/index/welcome');
+        return $this->url->path('system_utils/index/index');
     }
 
     /**
@@ -35,38 +34,31 @@ class Initializer extends InjectableAware implements ModuleInitializerInterface 
     public function initialize()
     {
         $this->config->merge(Config::factory([
-            'shopper' => []
+            'utils' => []
         ]));
 
         $this->loader->registerNamespaces([
             __NAMESPACE__ . '\\Controllers' => __DIR__ . '/controllers',
-            __NAMESPACE__ . '\\Core' => __DIR__ . '/core'
         ])->register();
 
-        $this->router->add('/shopper', [
+        $this->router->add('/system_utils', [
             'namespace' => __NAMESPACE__ . '\\Controllers'
         ]);
 
-        $this->router->add('/shopper/:action', [
+        $this->router->add('/system_utils/:controller', [
             'namespace' => __NAMESPACE__ . '\\Controllers',
             'controller' => 'index',
         ]);
 
-        $this->router->add('/shopper/:controller/:action', [
+        $this->router->add('/system_utils/:controller/:action', [
             'namespace' => __NAMESPACE__ . '\\Controllers'
         ]);
 
-        $this->router->add('/shopper/:controller/:action/:id', [
+        $this->router->add('/system_utils/:controller/:action/:id', [
             'namespace' => __NAMESPACE__ . '\\Controllers'
         ]);
 
-        $this->router->add('/shopper/:id', [
-            'namespace' => __NAMESPACE__ . '\\Controllers',
-            'controller' => 'product',
-            'action' => 'item',
-        ]);
-
-        $this->view->addDirectory('shopper', __DIR__ . '/templates');
+//        $this->view->addDirectory('utils', __DIR__ . '/templates');
     }
 
 }
