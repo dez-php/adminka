@@ -4,6 +4,7 @@ namespace Shopper;
 
 use Adminka\Core\InjectableAware;
 use Adminka\Core\Module\ModuleInitializerInterface;
+use AdminkaModels\UserResources;
 use Dez\Config\Config;
 
 /**

@@ -4,9 +4,52 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8fb8be75f65a2609085db45eda1e08c7",
-    "content-hash": "e6c5192ca79013798dda293607ee5971",
+    "hash": "ba8a180acd154beb92b3c6a81f7e89f4",
+    "content-hash": "bf09ed73714e008f815094b9b93bb886",
     "packages": [
+        {
+            "name": "dez-php/dez-acl",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dez-php/dez-acl.git",
+                "reference": "00e1d84ccc5785d526c8b543675691763b037246"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dez-php/dez-acl/zipball/00e1d84ccc5785d526c8b543675691763b037246",
+                "reference": "00e1d84ccc5785d526c8b543675691763b037246",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dez\\ACL\\Common\\": "src/Common",
+                    "Dez\\ACL\\ObjectBitmask\\": "src/ObjectBitmask",
+                    "Dez\\ACL\\RoleResourceAccess\\": "src/RoleResourceAccess"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Gontarenko",
+                    "email": "stewie.dev@gmail.com"
+                }
+            ],
+            "description": "Extended Access Control List",
+            "keywords": [
+                "acl",
+                "dez-php acl",
+                "php acl"
+            ],
+            "time": "2016-09-22 17:15:56"
+        },
         {
             "name": "dez-php/dez-authorizer",
             "version": "v2.1.0",
@@ -478,6 +521,48 @@
             "time": "2015-09-04 12:57:11"
         },
         {
+            "name": "dez-php/dez-logger",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dez-php/dez-logger.git",
+                "reference": "19b70d55e5ec858b7834ed2e2feed054f67737de"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dez-php/dez-logger/zipball/19b70d55e5ec858b7834ed2e2feed054f67737de",
+                "reference": "19b70d55e5ec858b7834ed2e2feed054f67737de",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5",
+                "psr/log": "~1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dez\\Logger\\": "src/Logger"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Gontarenko",
+                    "email": "stewie.dev@gmail.com"
+                }
+            ],
+            "description": "Logger Based On Psr\\Log",
+            "keywords": [
+                "log",
+                "logger",
+                "php log"
+            ],
+            "time": "2016-09-22 17:29:09"
+        },
+        {
             "name": "dez-php/dez-mvc-app",
             "version": "v2.1.2",
             "source": {
@@ -752,6 +837,53 @@
                 "url builder"
             ],
             "time": "2016-03-23 11:17:36"
+        },
+        {
+            "name": "psr/log",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/log.git",
+                "reference": "5277094ed527a1c4477177d102fe4c53551953e0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/5277094ed527a1c4477177d102fe4c53551953e0",
+                "reference": "5277094ed527a1c4477177d102fe4c53551953e0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Log\\": "Psr/Log/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for logging libraries",
+            "homepage": "https://github.com/php-fig/log",
+            "keywords": [
+                "log",
+                "psr",
+                "psr-3"
+            ],
+            "time": "2016-09-19 16:02:08"
         }
     ],
     "packages-dev": [],
