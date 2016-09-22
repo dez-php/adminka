@@ -16,6 +16,8 @@
     "ext-mbstring": "*",
     "dez-php/dez-mvc-app": "~2.0",
     "dez-php/dez-data-validation": "~1.0",
-    "dez-php/dez-html": "~0.1"
+    "dez-php/dez-html": "~0.1",
+    "dez-php/dez-acl": "~0.1",
+    "dez-php/dez-logger": "~0.1"
   }
 }
